@@ -5,6 +5,18 @@
 
 
 <div class="container">
+  <div class="row">
+    <div id="custom-search-input">
+      <div class="input-group col-md-12" style="text-align: center">
+        <input type="text" class="search-query form-control" placeholder="Search With Email Address"  name="email" [(ngModel)]="name"/>
+        <span class="input-group-btn">
+          <button class="btn btn-danger" type="button" (click)="findProjectByName()">
+            <span class=" glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="container">
   <div class="container">
@@ -17,6 +29,7 @@
           <th>Duree</th>
           <th>Statut</th>
           <th>Action</th>
+          <th>Action</th>
         </tr>
         </thead>
         <tbody>
@@ -26,6 +39,7 @@
           <td>{{projet.duree}}</td>
           <td>{{projet.statut}}</td>
           <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteProject(projet.id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+          <td class="text-center"><button class="btn btn-success btn-xs" (click)="updateProject(projet)"><span class="glyphicon glyphicon-remove"></span> Edit </button></td>
 
         </tr>
         </tbody>

@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Projet} from "../projet";
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService {
+
+  projet: Projet= new Projet("projet2", 22, "a faire");
 
   constructor(private http:HttpClient) { }
 
@@ -17,14 +20,26 @@ return this.http.get("http://localhost:8081/api/projets");
     return this.http.post("http://localhost:8081/api/register",projet,{responseType:'text' as 'json'});
   }
 
+  public updateProject(projet){
+    return this.http.put("http://localhost:8081/api/projets/update/"+projet,projet,{responseType:'text' as 'json'});
+  }
+
 
   public getProjectById(id){
-    return this.http.get("http://localhost:8081/api/projets/"+id);
+    return this.http.get("/api/projets/"+id);
+  }
+
+
+  public getProjectByName(name){
+    return this.http.get("http://localhost:8081/api/projets/search/"+name);
   }
 
   public deleteProject(id){
-    return this.http.delete("http://localhost:8081/api/cancel/"+id);
+    return this.http.get("http://localhost:8081/api/cancel/"+id);
   }
+
+
+
 
   /*
     getProject(id:Number){

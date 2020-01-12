@@ -26,6 +26,7 @@
         <tr>
           <th>Id</th>
           <th>Name</th>
+          <th>Statut</th>
           <th>Supprimer</th>
           <th>Modifier</th>
           <th>Voire taches</th>
@@ -35,9 +36,10 @@
         <tr *ngFor="let tache of taches">
           <td>{{tache.id}}</td>
           <td>{{tache.nom}}</td>
+          <td>{{tache.statut}}</td>
           <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteTache(tache.id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
           <td class="text-center"><button class="btn btn-success btn-xs"  (click)="updateTache(tache)"><span class="glyphicon glyphicon-remove"></span> Edit </button></td>
-          <td class="text-center"><button class="btn btn-xs" ><span class="glyphicon glyphicon-remove"></span> Taches </button></td>
+          <td class="text-center"><button class="btn btn-danger btn-xs" (click)="validerTache(tache.id)"><span class="glyphicon glyphicon-remove"></span> Valider</button></td>
         </tr>
         </tbody>
       </table>

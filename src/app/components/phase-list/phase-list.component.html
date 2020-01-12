@@ -39,6 +39,7 @@
           <td>{{phase.statut}}</td>
           <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deletePhase(phase.id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
           <td class="text-center"><button class="btn btn-success btn-xs"  (click)="updatePhase(phase)"><span class="glyphicon glyphicon-remove"></span> Edit </button></td>
+          <td class="text-center"><button class="btn btn-danger btn-xs" (click)="validerPhase(phase.id)"><span class="glyphicon glyphicon-remove"></span> Valider</button></td>
           <td class="text-center"><button class="btn btn-xs" (click)="getTaches(phase.id)"><span class="glyphicon glyphicon-remove"></span> Taches </button></td>
 
         </tr>

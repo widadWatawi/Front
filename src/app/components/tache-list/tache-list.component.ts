@@ -42,5 +42,10 @@ export class TacheListComponent implements OnInit {
     resp.subscribe((data)=>this.taches=data);
   }
 
+  public validerTache(id:number){
+    let resp= this.service.validerTache(id);
+    resp.subscribe((data)=>this.taches=data);
+  }
+
 
 }

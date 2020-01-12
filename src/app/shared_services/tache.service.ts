@@ -7,7 +7,7 @@ import {HttpClient} from "@angular/common/http";
 })
 export class TacheService {
 
-  tache: Tache= new Tache("nom");
+  tache: Tache= new Tache("nom", "statut");
   phase_id: number
   constructor(private http:HttpClient) { }
 
@@ -31,6 +31,10 @@ export class TacheService {
 
   public getTacheByName(name){
     return this.http.get("http://localhost:8081/api/taches/search/"+name);
+  }
+
+  public validerTache(id){
+    return this.http.get("http://localhost:8081/api/tache/valider/"+id+"?phase_id="+this.phase_id);
   }
 
 

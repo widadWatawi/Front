@@ -19,10 +19,16 @@ export class ProjectSearchDeleteComponent implements OnInit {
   ngOnInit() {
     let resp=this.service.getProjects();
     resp.subscribe((data)=>this.projets=data);
+
   }
 
   public deleteProject(id:number){
     let resp= this.service.deleteProject(id);
+    resp.subscribe((data)=>this.projets=data);
+  }
+
+  public validerProject(id:number){
+    let resp= this.service.validerProject(id);
     resp.subscribe((data)=>this.projets=data);
   }
 

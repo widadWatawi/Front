@@ -30,6 +30,7 @@
           <th>Statut</th>
           <th>Supprimer</th>
           <th>Modifier</th>
+          <th>Valider</th>
           <th>Voire phases</th>
         </tr>
         </thead>
@@ -41,6 +42,7 @@
           <td>{{projet.statut}}</td>
           <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteProject(projet.id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
           <td class="text-center"><button class="btn btn-success btn-xs" (click)="updateProject(projet)"><span class="glyphicon glyphicon-remove"></span> Edit </button></td>
+          <td class="text-center"><button class="btn btn-danger btn-xs" (click)="validerProject(projet.id)"><span class="glyphicon glyphicon-remove"></span> Valider</button></td>
           <td class="text-center"><button class="btn btn-xs" (click)="getPhases(projet.id)"><span class="glyphicon glyphicon-remove"></span> Phases </button></td>
 
         </tr>

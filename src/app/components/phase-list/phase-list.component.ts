@@ -46,4 +46,9 @@ export class PhaseListComponent implements OnInit {
     this.route.navigate(['/taches']);
   }
 
+  public validerPhase(id:number){
+    let resp= this.service.validerPhase(id);
+    resp.subscribe((data)=>this.phases=data);
+  }
+
 }

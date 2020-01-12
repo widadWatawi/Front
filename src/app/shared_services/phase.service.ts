@@ -36,4 +36,8 @@ export class PhaseService {
     return this.http.get("http://localhost:8081/api/phases/search/"+name);
   }
 
+  public validerPhase(id){
+    return this.http.get("http://localhost:8081/api/phase/valider/"+id+"?project_id="+this.projet_id);
+  }
+
 }

@@ -12,7 +12,7 @@ import {Phase} from "../../phase";
 })
 export class TacheFormComponent implements OnInit {
 
-  tache: Tache= new Tache("nom");
+  tache: Tache= new Tache("nom","statut");
   message:any;
 
   constructor(private service:TacheService, private route:Router, private location: Location) { }

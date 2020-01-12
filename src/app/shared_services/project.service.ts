@@ -38,6 +38,10 @@ return this.http.get("http://localhost:8081/api/projets");
     return this.http.get("http://localhost:8081/api/cancel/"+id);
   }
 
+  public validerProject(id){
+    return this.http.get("http://localhost:8081/api/valider/"+id);
+  }
+
   getPhases(projet_id){
     return this.http.get("http://localhost:8081/api/projets/"+projet_id+"/phase");
   }

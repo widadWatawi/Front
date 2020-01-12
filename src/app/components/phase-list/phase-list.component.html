@@ -10,7 +10,7 @@
       <div class="input-group col-md-12" style="text-align: center">
         <input type="text" class="search-query form-control" placeholder="Search With Email Address"  name="email" [(ngModel)]="name"/>
         <span class="input-group-btn">
-          <button class="btn btn-danger" type="button" (click)="findProjectByName()">
+          <button class="btn btn-danger" type="button" (click)="findPhaseByName()">
             <span class=" glyphicon glyphicon-search"></span>
           </button>
         </span>
@@ -26,29 +26,30 @@
         <tr>
           <th>Id</th>
           <th>Name</th>
-          <th>Duree</th>
           <th>Statut</th>
           <th>Supprimer</th>
           <th>Modifier</th>
-          <th>Valider</th>
-          <th>Voire phases</th>
+          <th>Voire taches</th>
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let projet of projets">
-          <td>{{projet.id}}</td>
-          <td>{{projet.nom}}</td>
-          <td>{{projet.duree}}</td>
-          <td>{{projet.statut}}</td>
-          <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteProject(projet.id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
-          <td class="text-center"><button class="btn btn-success btn-xs" (click)="updateProject(projet)"><span class="glyphicon glyphicon-remove"></span> Edit </button></td>
-          <td class="text-center"><button class="btn btn-danger btn-xs" (click)="validerProject(projet.id)"><span class="glyphicon glyphicon-remove"></span> Valider</button></td>
-          <td class="text-center"><button class="btn btn-xs" (click)="getPhases(projet.id)"><span class="glyphicon glyphicon-remove"></span> Phases </button></td>
+        <tr *ngFor="let phase of phases">
+          <td>{{phase.id}}</td>
+          <td>{{phase.nom}}</td>
+          <td>{{phase.statut}}</td>
+          <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deletePhase(phase.id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+          <td class="text-center"><button class="btn btn-success btn-xs"  (click)="updatePhase(phase)"><span class="glyphicon glyphicon-remove"></span> Edit </button></td>
+          <td class="text-center"><button class="btn btn-danger btn-xs" (click)="validerPhase(phase.id)"><span class="glyphicon glyphicon-remove"></span> Valider</button></td>
+          <td class="text-center"><button class="btn btn-xs" (click)="getTaches(phase.id)"><span class="glyphicon glyphicon-remove"></span> Taches </button></td>
 
         </tr>
         </tbody>
       </table>
+
+      <button class="btn btn-primary" (click)="addPhase()"><span class="glyphicon glyphicon-remove"></span>Ajouter Phase </button>
+
     </div>
   </div>
 
 </div>
+

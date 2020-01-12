@@ -21,7 +21,7 @@ return this.http.get("http://localhost:8081/api/projets");
   }
 
   public updateProject(projet){
-    return this.http.put("http://localhost:8081/api/projets/update/"+projet,projet,{responseType:'text' as 'json'});
+    return this.http.put("http://localhost:8081/api/projets/update",projet,{responseType:'text' as 'json'});
   }
 
 
@@ -36,6 +36,10 @@ return this.http.get("http://localhost:8081/api/projets");
 
   public deleteProject(id){
     return this.http.get("http://localhost:8081/api/cancel/"+id);
+  }
+
+  getPhases(projet_id){
+    return this.http.get("http://localhost:8081/api/projets/"+projet_id+"/phase");
   }
 
 

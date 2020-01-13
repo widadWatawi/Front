@@ -41,6 +41,7 @@ export class ProjectSearchDeleteComponent implements OnInit {
   public findProjectByName(){
     let resp= this.service.getProjectByName(this.name);
     resp.subscribe((data)=>this.projets=data);
+
   }
 
   public getPhases(projet_id){

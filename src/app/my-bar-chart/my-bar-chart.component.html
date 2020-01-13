@@ -1,0 +1,54 @@
+<div class="wrapper">
+
+<div class="sidebar">
+  <div class="img">
+    <img class="wave" src="assets/img/1.PNG">
+  </div>
+  <ul>
+    <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+    <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
+    <li><a href="#"><i class="fas fa-address-card"></i>Services</a></li>
+    <li><a href="#"><i class="fas fa-project-diagram"></i>Projects</a></li>
+    <li><a href="#"><i class="fas fa-blog"></i>Workers</a></li>
+    <li><a href="#"><i class="fas fa-address-book"></i>Contact</a></li>
+    <li><a href="#"><i class="fas fa-map-pin"></i>Deconnexion</a></li>
+  </ul>
+</div>
+
+<div id="chart">
+  <div style="display: block ">
+    <canvas baseChart
+
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"></canvas>
+
+  </div>
+
+</div>
+
+
+<div id="top">
+  <br>
+  <div class="card">
+    <img src="assets/img/users.png" alt="Avatar" style="width:80%">
+    <div class="container">
+      <h4><b>Co-workers :</b></h4>
+      <p>Architect & Engineer</p>
+    </div>
+  </div>
+  <br>
+  <div class="card">
+    <img src="assets/img/doneprojects.png" alt="Avatar" style="width:80%">
+    <div class="container">
+      <h4><b>Project completed</b></h4>
+      <p>Architect & Engineer</p>
+    </div>
+  </div>
+</div>
+
+
+
+</div>

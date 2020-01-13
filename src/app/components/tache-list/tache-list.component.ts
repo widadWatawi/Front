@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TacheService} from "../../shared_services/tache.service";
 import {Router} from "@angular/router";
 import {PhaseService} from "../../shared_services/phase.service";
+import { AffectationService} from "../../shared_services/affectation.service";
 
 
 @Component({
@@ -15,7 +16,7 @@ export class TacheListComponent implements OnInit {
   phase_id:number;
   name:string;
 
-  constructor(private service:TacheService, private route:Router) { }
+  constructor(private service:TacheService, private serviceAffecattion:AffectationService,private route:Router) { }
 
   ngOnInit() {
     this.phase_id=this.service.phase_id;
@@ -45,6 +46,11 @@ export class TacheListComponent implements OnInit {
   public validerTache(id:number){
     let resp= this.service.validerTache(id);
     resp.subscribe((data)=>this.taches=data);
+  }
+
+  public getEmployees(id:number){
+    this.serviceAffecattion.tache_id=id;
+    this.route.navigate(['/affectation']);
   }
 
 

@@ -27,6 +27,7 @@
           <th>Id</th>
           <th>Name</th>
           <th>Statut</th>
+          <th>Collaborateur</th>
           <th>Supprimer</th>
           <th>Modifier</th>
           <th>Voire taches</th>
@@ -37,9 +38,12 @@
           <td>{{tache.id}}</td>
           <td>{{tache.nom}}</td>
           <td>{{tache.statut}}</td>
+          <td>{{tache.collaborateur.nom}}</td>
           <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteTache(tache.id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
           <td class="text-center"><button class="btn btn-success btn-xs"  (click)="updateTache(tache)"><span class="glyphicon glyphicon-remove"></span> Edit </button></td>
           <td class="text-center"><button class="btn btn-danger btn-xs" (click)="validerTache(tache.id)"><span class="glyphicon glyphicon-remove"></span> Valider</button></td>
+          <td class="text-center"><button class="btn btn-danger btn-xs" (click)="getEmployees(tache.id)"><span class="glyphicon glyphicon-remove"></span> Affecter</button></td>
+
         </tr>
         </tbody>
       </table>

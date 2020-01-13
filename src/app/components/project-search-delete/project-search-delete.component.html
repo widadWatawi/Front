@@ -28,9 +28,11 @@
           <th>Name</th>
           <th>Duree</th>
           <th>Statut</th>
+          <th>Chef</th>
           <th>Supprimer</th>
           <th>Modifier</th>
           <th>Valider</th>
+          <th>Affecter</th>
           <th>Voire phases</th>
         </tr>
         </thead>
@@ -40,9 +42,11 @@
           <td>{{projet.nom}}</td>
           <td>{{projet.duree}}</td>
           <td>{{projet.statut}}</td>
+          <td>{{projet.chef.nom}}</td>
           <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteProject(projet.id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
           <td class="text-center"><button class="btn btn-success btn-xs" (click)="updateProject(projet)"><span class="glyphicon glyphicon-remove"></span> Edit </button></td>
           <td class="text-center"><button class="btn btn-danger btn-xs" (click)="validerProject(projet.id)"><span class="glyphicon glyphicon-remove"></span> Valider</button></td>
+          <td class="text-center"><button class="btn btn-xs" (click)="getChefs(projet.id)"><span class="glyphicon glyphicon-remove"></span> Affecter </button></td>
           <td class="text-center"><button class="btn btn-xs" (click)="getPhases(projet.id)"><span class="glyphicon glyphicon-remove"></span> Phases </button></td>
 
         </tr>

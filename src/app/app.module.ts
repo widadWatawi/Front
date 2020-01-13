@@ -16,6 +16,7 @@ import { PhaseFormComponent } from './components/phase-form/phase-form.component
 import { TacheListComponent } from './components/tache-list/tache-list.component';
 import { TacheFormComponent } from './components/tache-form/tache-form.component';
 import {TacheService} from './shared_services/tache.service';
+import { AffectationListComponent } from './components/affectation-list/affectation-list.component';
 
 
 
@@ -29,7 +30,8 @@ import {TacheService} from './shared_services/tache.service';
     PhaseListComponent,
     PhaseFormComponent,
     TacheListComponent,
-    TacheFormComponent
+    TacheFormComponent,
+    AffectationListComponent
   ],
   imports: [
     BrowserModule,

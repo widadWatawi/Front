@@ -7,6 +7,7 @@ import {PhaseListComponent} from "./components/phase-list/phase-list.component";
 import {PhaseFormComponent} from "./components/phase-form/phase-form.component";
 import {TacheFormComponent} from "./components/tache-form/tache-form.component";
 import {TacheListComponent} from "./components/tache-list/tache-list.component";
+import {AffectationListComponent} from "./components/affectation-list/affectation-list.component";
 
 const routes: Routes = [
   {path:"",redirectTo:"register",pathMatch:"full"},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:"phaseForm",component:PhaseFormComponent},
   {path:"phases",component:PhaseListComponent},
   {path:"tacheForm",component:TacheFormComponent},
-  {path:"taches",component:TacheListComponent}
+  {path:"taches",component:TacheListComponent},
+  {path:"affectation",component:AffectationListComponent}
 ];
 
 @NgModule({

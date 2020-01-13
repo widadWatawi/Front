@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ProjectService} from "../../shared_services/project.service";
 import {Router} from "@angular/router";
 import {PhaseService} from "../../shared_services/phase.service";
+import { AffectationService} from "../../shared_services/affectation.service";
 
 @Component({
   selector: 'app-project-search-delete',
@@ -14,7 +15,7 @@ export class ProjectSearchDeleteComponent implements OnInit {
   phases:any;
   name:string;
 
-  constructor(private service:ProjectService, private servicePhase:PhaseService, private route:Router) { }
+  constructor(private service:ProjectService, private servicePhase:PhaseService, private serviceAffectation:AffectationService, private route:Router) { }
 
   ngOnInit() {
     let resp=this.service.getProjects();
@@ -45,6 +46,11 @@ export class ProjectSearchDeleteComponent implements OnInit {
   public getPhases(projet_id){
     this.servicePhase.projet_id=projet_id;
     this.route.navigate(['/phases']);
+  }
+
+  public getChefs(id:number){
+    this.serviceAffectation.projet_id=id;
+    this.route.navigate(['/affectation']);
   }
 
 }

@@ -1,3 +1,19 @@
+Ceci est la partie Frontend de notre projet réalisée avec le framework Angular
+
+******Outils utlisés*********************
+Backend :Spring boot, Spring security
+Persistence: JPA, MySql
+Frontend: Angular
+
+*********Membres du groupe***************
+ELOUATAOUI WIDAD
+KABO HOUDA
+ARKIZA MERYEM
+ZOUHAIR NOUHAILA
+
+
+
+
 # Front
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.

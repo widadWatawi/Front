@@ -21,7 +21,27 @@
 <div class="container">
   <div class="container">
     <div class="row col-md-6 col-md-offset-2 custyle">
-      <table class="table table-striped custab">
+      <table class="table table-striped custab" *ngIf="user.fonction.nom=='Employee'" >
+        <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Statut</th>
+          <th>Voire taches</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let phase of phases">
+          <td>{{phase.id}}</td>
+          <td>{{phase.nom}}</td>
+          <td>{{phase.statut}}</td>
+          <td class="text-center"><button class="btn btn-xs" (click)="getTaches(phase.id)"><span class="glyphicon glyphicon-remove"></span> Taches </button></td>
+
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table table-striped custab" *ngIf="user.fonction.nom=='Directeur'" >
         <thead>
         <tr>
           <th>Id</th>
@@ -29,6 +49,33 @@
           <th>Statut</th>
           <th>Supprimer</th>
           <th>Modifier</th>
+          <th>Voire taches</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let phase of phases">
+          <td>{{phase.id}}</td>
+          <td>{{phase.nom}}</td>
+          <td>{{phase.statut}}</td>
+          <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deletePhase(phase.id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+          <td class="text-center"><button class="btn btn-success btn-xs"  (click)="updatePhase(phase)"><span class="glyphicon glyphicon-remove"></span> Edit </button></td>
+          <td class="text-center"><button class="btn btn-xs" (click)="getTaches(phase.id)"><span class="glyphicon glyphicon-remove"></span> Taches </button></td>
+
+        </tr>
+        </tbody>
+      </table>
+
+
+
+      <table class="table table-striped custab" *ngIf="user.fonction.nom=='chef'" >
+        <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Statut</th>
+          <th>Supprimer</th>
+          <th>Modifier</th>
+          <th>Valider</th>
           <th>Voire taches</th>
         </tr>
         </thead>

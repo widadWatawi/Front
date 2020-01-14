@@ -11,20 +11,22 @@ import {PhaseFormComponent} from "./components/phase-form/phase-form.component";
 import {TacheFormComponent} from "./components/tache-form/tache-form.component";
 import {TacheListComponent} from "./components/tache-list/tache-list.component";
 import {AffectationListComponent} from "./components/affectation-list/affectation-list.component";
+import {EditProjetComponent} from "./components/edit-projet/edit-projet.component";
 
 const routes: Routes = [
    {path:"",redirectTo:"login",pathMatch:"full"},
 
-    {path:"bar-chart",component: MyBarChartComponent},
-    {path:"dashboard",component: DashboardComponent},
-    {path:"login",component:AuthComponent},
+  {path:"bar-chart",component: MyBarChartComponent},
+  {path:"dashboard",component: DashboardComponent},
+  {path:"login",component:AuthComponent,data: { title: 'welcome', toolbar: false}},
   {path:"register",component:ProjectRegistrationComponent},
   {path:"search",component:ProjectSearchDeleteComponent},
   {path:"phaseForm",component:PhaseFormComponent},
   {path:"phases",component:PhaseListComponent},
   {path:"tacheForm",component:TacheFormComponent},
   {path:"taches",component:TacheListComponent},
-  {path:"affectation",component:AffectationListComponent}
+  {path:"affectation",component:AffectationListComponent},
+  {path:"editProjet",component:EditProjetComponent}
 
 ];
 

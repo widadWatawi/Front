@@ -9,6 +9,8 @@ export class TacheService {
 
   tache: Tache= new Tache("nom", "statut");
   phase_id: number
+
+
   constructor(private http:HttpClient) { }
 
   getTache(phase_id){
@@ -36,6 +38,7 @@ export class TacheService {
   public validerTache(id){
     return this.http.get("http://localhost:8081/api/tache/valider/"+id+"?phase_id="+this.phase_id);
   }
+
 
 
 }

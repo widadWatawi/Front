@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {PhaseService} from "../../shared_services/phase.service";
 import {TacheService} from "../../shared_services/tache.service";
 import {Router} from "@angular/router";
+import {UserService} from "../../shared_services/user.service";
 
 @Component({
   selector: 'app-phase-list',
@@ -13,10 +14,20 @@ export class PhaseListComponent implements OnInit {
   phases:any;
   projet_id:number;
   name:string;
+  login:string;
+  user:any;
 
-  constructor(private service:PhaseService,private serviceTache:TacheService,  private route:Router) { }
+  constructor(private service:PhaseService ,private serviceUser:UserService,private serviceTache:TacheService,  private route:Router) { }
 
   ngOnInit() {
+
+    this.login=sessionStorage.getItem('login');
+    let resp_user= this.serviceUser.getUserByLogin(this.login);
+    resp_user.subscribe((data)=>this.user=data);
+    this.getPhases();
+  }
+
+  public getPhases(){
     this.projet_id=this.service.projet_id;
     let resp=this.service.getPhases(this.projet_id);
     resp.subscribe((data)=>this.phases=data);

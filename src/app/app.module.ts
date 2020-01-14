@@ -26,6 +26,8 @@ import { TacheFormComponent } from './components/tache-form/tache-form.component
 import {TacheService} from './shared_services/tache.service';
 
 import { AffectationListComponent } from './components/affectation-list/affectation-list.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { EditProjetComponent } from './components/edit-projet/edit-projet.component';
 
 
 
@@ -46,7 +48,9 @@ import { AffectationListComponent } from './components/affectation-list/affectat
     TacheListComponent,
     TacheFormComponent,
     AffectationListComponent,
-    TacheFormComponent
+    TacheFormComponent,
+    MenuComponent,
+    EditProjetComponent
   ],
   imports: [
     BrowserModule,

@@ -50,6 +50,15 @@ return this.http.get("http://localhost:8081/api/projets");
     return this.http.get("http://localhost:8081/personnel/chefs");
   }
 
+  public getProjectByChef(login){
+    return this.http.get("http://localhost:8081/api/chef/projets/"+login);
+  }
+
+  public getProjectByEmployee(login){
+    return this.http.get("http://localhost:8081/api/employee/projets/"+login);
+  }
+
+
 
 
 

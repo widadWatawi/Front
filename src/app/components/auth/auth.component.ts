@@ -13,6 +13,7 @@ import {User} from "../../user";
 export class AuthComponent implements OnInit {
 
 
+
   constructor(private service:UserService, private route:Router) { }
 
   user: User= new User("login", "pwd");
@@ -21,13 +22,16 @@ export class AuthComponent implements OnInit {
   invalidLogin = false
   message:any;
 
-  ngOnInit() {
 
+  ngOnInit() {
+    this.service.logOut();
   }
 
   public logIn(){
       if(this.service.authenticate(this.login,this.pwd)){
-        this.route.navigate(['/search']);
+        sessionStorage.setItem('login', this.login);
+        this.route.navigate(["search"]);
+        sessionStorage.setItem('load', 'load');
         this.invalidLogin = false;
       }
       else {

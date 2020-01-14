@@ -3,6 +3,7 @@ import { TacheService} from "../../shared_services/tache.service";
 import {Router} from "@angular/router";
 import {PhaseService} from "../../shared_services/phase.service";
 import { AffectationService} from "../../shared_services/affectation.service";
+import {UserService} from "../../shared_services/user.service";
 
 
 @Component({
@@ -15,10 +16,22 @@ export class TacheListComponent implements OnInit {
   taches:any;
   phase_id:number;
   name:string;
+  login:string;
+  user:any;
 
-  constructor(private service:TacheService, private serviceAffecattion:AffectationService,private route:Router) { }
+  constructor(private service:TacheService, private serviceAffecattion:AffectationService ,private serviceUser:UserService,private route:Router) { }
 
   ngOnInit() {
+
+    this.login=sessionStorage.getItem('login');
+    let resp_user= this.serviceUser.getUserByLogin(this.login);
+    resp_user.subscribe((data)=>this.user=data);
+
+    this.getTaches();
+
+  }
+
+  public getTaches(){
     this.phase_id=this.service.phase_id;
     let resp=this.service.getTache(this.phase_id);
     resp.subscribe((data)=>this.taches=data);

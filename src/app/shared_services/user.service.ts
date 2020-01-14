@@ -7,16 +7,14 @@ import {User} from "../user";
 })
 export class UserService {
 
-  user: User= new User("login", "pwd");
+  user:any;
+  showNav:true;
 
 
   constructor(private http:HttpClient) { }
 
   authenticate(login, pwd) {
-
-
     if (this.http.get("http://localhost:8081/personnel/"+login+"/"+pwd)) {
-      sessionStorage.setItem('login', login)
       return true;
     } else {
       return false;
@@ -31,6 +29,11 @@ export class UserService {
 
   logOut() {
     sessionStorage.removeItem('login')
+  }
+
+  public getUserByLogin(login){
+    return this.http.get("http://localhost:8081/personnel/"+login);
+    //sessionStorage.setItem("email", this.user.email)
   }
 }
 

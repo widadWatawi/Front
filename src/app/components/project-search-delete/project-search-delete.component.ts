@@ -3,6 +3,8 @@ import {ProjectService} from "../../shared_services/project.service";
 import {Router} from "@angular/router";
 import {PhaseService} from "../../shared_services/phase.service";
 import { AffectationService} from "../../shared_services/affectation.service";
+import {UserService} from "../../shared_services/user.service";
+import {User} from "../../user";
 
 @Component({
   selector: 'app-project-search-delete',
@@ -11,16 +13,45 @@ import { AffectationService} from "../../shared_services/affectation.service";
 })
 export class ProjectSearchDeleteComponent implements OnInit {
 
+  projets_chefs:any;
+  projets_employees:any;
   projets:any;
   phases:any;
   name:string;
+  login:string;
+  user:any;
+  mimi:any;
 
-  constructor(private service:ProjectService, private servicePhase:PhaseService, private serviceAffectation:AffectationService, private route:Router) { }
+  constructor(private service:ProjectService, private servicePhase:PhaseService, private serviceAffectation:AffectationService,private serviceUser:UserService, private route:Router) { }
 
   ngOnInit() {
+    this.login=sessionStorage.getItem('login');
+    let resp_user= this.serviceUser.getUserByLogin(this.login);
+    resp_user.subscribe((data)=>this.user=data);
+    if(sessionStorage.getItem('load')=='load'){
+      location.reload();
+      sessionStorage.setItem('load','notload');
+    }
+    this.ProjetsChefs();
+    this.Projets();
+    this.ProjetsEmployees();
+
+  }
+
+
+  public ProjetsChefs(){
+      let resp=this.service.getProjectByChef(this.login);
+      resp.subscribe((data)=>this.projets_chefs=data);
+  }
+
+  public ProjetsEmployees(){
+    let resp=this.service.getProjectByEmployee(this.login);
+    resp.subscribe((data)=>this.projets_employees=data);
+  }
+
+  public Projets(){
     let resp=this.service.getProjects();
     resp.subscribe((data)=>this.projets=data);
-
   }
 
   public deleteProject(id:number){
@@ -35,7 +66,7 @@ export class ProjectSearchDeleteComponent implements OnInit {
 
   public updateProject(projet){
     this.service.projet=projet;
-    this.route.navigate(['/register']);
+    this.route.navigate(['/editProjet']);
   }
 
   public findProjectByName(){

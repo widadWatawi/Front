@@ -1,0 +1,16 @@
+<div class="wrapper" *ngIf='visible' >
+  <div class="sidebar">
+    <div class="img">
+      <img class="wave" src="assets/img/1.PNG">
+    </div>
+    <ul>
+      <li (click)="Home()"><a><i class="fas fa-home"></i>Home</a></li>
+      <li (click)="AddProject()"><a><i class="fas fa-user"></i>Add a Project</a></li>
+      <li (click)="Dashbord()"><a><i class="fas fa-address-card"></i>Dashbord</a></li>
+      <li (click)="Profile()"><a><i class="fas fa-project-diagram"></i>Profile</a></li>
+      <li (click)="Projects()"><a><i class="fas fa-blog"></i>Projects</a></li>
+      <li (click)="Logout()"><a><i class="fas fa-address-book"></i>Contact</a></li>
+      <li (click)="Logout()"><a><i class="fas fa-map-pin" ></i>Deconnexion</a></li>
+    </ul>
+  </div>
+</div>

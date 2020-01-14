@@ -1,43 +1,41 @@
-
 <div class="container">
+
   <div class="img">
     <img class="wave" src="assets/img/img.svg">
 
   </div>
   <div  class="login-container" >
-    <form>
       <img class="avatar" src="assets/img/avatar.svg">
       <h2>welcome</h2>
-      <div class="input-dev one">
-        <div class="input-div">
-          <div class="i">
-            <i class="fas fa-user"></i>
-          </div>
-        </div>
-        <div>
-          <br>
 
-          <input class="input" id="usr" type="text" placeholder="Username">
+    <div class="input-dev one">
+      <div class="input-div">
+        <div class="i">
+          <i class="fas fa-user"></i>
         </div>
       </div>
+      <div>
+        <br>
 
-      <div class="input-dev two">
-        <div class="input-div">
-          <div class="i">
-            <i class="fas fa-lock"></i>
-          </div>
-        </div>
-        <div>
-
-
-          <input class="input" type="password" placeholder="Password">
+        <input class="input" id="usr" [(ngModel)]="login" type="text" placeholder="Username">
+      </div>
+    </div>
+    <div class="input-dev two">
+      <div class="input-div">
+        <div class="i">
+          <i class="fas fa-lock"></i>
         </div>
       </div>
+      <div>
+        <input class="input" type="password" [(ngModel)]="pwd" placeholder="Password">
+      </div>
+    </div>
       <a href="#">Forgot Password? </a>
-      <input type="submit" class="btn" value="Login">
+    <input type="submit" class="btn" value="Login" (click)="logIn()">
 
-    </form>
   </div>
+
 </div>
 
-<script type="text/javascript" src="js/main.js"></script>
+
+

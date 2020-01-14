@@ -11,6 +11,7 @@ export class TacheService {
   phase_id: number
 
 
+
   constructor(private http:HttpClient) { }
 
   getTache(phase_id){
@@ -36,6 +37,7 @@ export class TacheService {
   }
 
   public validerTache(id){
+    this.phase_id= Number(sessionStorage.getItem('proj'));
     return this.http.get("http://localhost:8081/api/tache/valider/"+id+"?phase_id="+this.phase_id);
   }
 

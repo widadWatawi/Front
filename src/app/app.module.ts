@@ -30,6 +30,7 @@ import { AffectationListComponent } from './components/affectation-list/affectat
 import { MenuComponent } from './components/menu/menu.component';
 import { EditProjetComponent } from './components/edit-projet/edit-projet.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AffectationListTachesComponent } from './components/affectation-list-taches/affectation-list-taches.component';
 
 
 // @ts-ignore
@@ -50,7 +51,8 @@ import { ProfileComponent } from './profile/profile.component';
     TacheFormComponent,
     MenuComponent,
     EditProjetComponent,
-    ProfileComponent
+    ProfileComponent,
+    AffectationListTachesComponent
   ],
   imports: [
     BrowserModule,

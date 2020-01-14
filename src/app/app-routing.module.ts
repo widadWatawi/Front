@@ -13,6 +13,7 @@ import {TacheListComponent} from "./components/tache-list/tache-list.component";
 import {AffectationListComponent} from "./components/affectation-list/affectation-list.component";
 import {EditProjetComponent} from "./components/edit-projet/edit-projet.component";
 import {ProfileComponent} from "./profile/profile.component";
+import {AffectationListTachesComponent} from "./components/affectation-list-taches/affectation-list-taches.component";
 
 const routes: Routes = [
    {path:"",redirectTo:"login",pathMatch:"full"},
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path:"tacheForm",component:TacheFormComponent},
   {path:"taches",component:TacheListComponent},
   {path:"affectation",component:AffectationListComponent},
+  {path:"affectationTaches",component:AffectationListTachesComponent},
   {path:"editProjet",component:EditProjetComponent}
 
 ];

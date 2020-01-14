@@ -8,6 +8,7 @@ export class AffectationService {
 
   projet_id: number
   tache_id: number
+  projet:number
 
   constructor(private http:HttpClient) { }
 
@@ -20,7 +21,8 @@ export class AffectationService {
   }
 
   public AffecterChef(id){
-    return this.http.get("http://localhost:8081/personnel/affecterProjet/"+this.projet_id+"/"+id);
+    this.projet= Number(sessionStorage.getItem('projet'));
+    return this.http.get("http://localhost:8081/personnel/affecterProjet/"+this.projet+"/"+id);
   }
 
   public AffecterEmployees(id){

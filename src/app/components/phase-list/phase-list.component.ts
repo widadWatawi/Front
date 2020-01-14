@@ -11,6 +11,8 @@ import {Router} from "@angular/router";
 export class PhaseListComponent implements OnInit {
 
   phases:any;
+  phases1:any;
+  phases2:any;
   projet_id:number;
   name:string;
 
@@ -20,6 +22,8 @@ export class PhaseListComponent implements OnInit {
     this.projet_id=this.service.projet_id;
     let resp=this.service.getPhases(this.projet_id);
     resp.subscribe((data)=>this.phases=data);
+      resp.subscribe((data)=>this.phases1=data);
+        resp.subscribe((data)=>this.phases2=data);
   }
 
   public addPhase(){

@@ -12,6 +12,8 @@ import { AffectationService} from "../../shared_services/affectation.service";
 export class ProjectSearchDeleteComponent implements OnInit {
 
   projets:any;
+  projets2:any;
+   projets3:any;
   phases:any;
   name:string;
 
@@ -20,7 +22,8 @@ export class ProjectSearchDeleteComponent implements OnInit {
   ngOnInit() {
     let resp=this.service.getProjects();
     resp.subscribe((data)=>this.projets=data);
-
+    resp.subscribe((data)=>this.projets2=data);
+     resp.subscribe((data)=>this.projets3=data);
   }
 
   public deleteProject(id:number){

@@ -1,8 +1,146 @@
 
 
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+*{
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Josefin Sans', sans-serif;
+}
+.container{
+margin-right:-500%;
+width:78%;
+
+}
+.wrapper{
+
+  display: flex;
+  position: relative;
+  padding-left:-20px
+}
+.img{
+padding-left:20%;
+}
+.wave{
+margin-right:30px;
+width:80%;
+}
+
+.wrapper .sidebar{
+  width: 200px;
+  height: 93%;
+  background: #002a38;
+  padding: 30px 0px;
+  padding-right:10px;
+  position: fixed;
+}
+
+.wrapper .sidebar h2{
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.wrapper .sidebar ul li{
+  padding: 15px;
+  border-bottom: 1px solid #bdb8d7;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.wrapper .sidebar ul li a{
+  color: #bdb8d7;
+  display: block;
+}
+
+.wrapper .sidebar ul li a .fas{
+  width: 25px;
+}
+
+.wrapper .sidebar ul li:hover{
+  background-color: #209acf;
+}
+
+.wrapper .sidebar ul li:hover a{
+  color: #fff;
+}
+
+.wrapper .sidebar .social_media{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.wrapper .sidebar .social_media a{
+  display: block;
+  width: 40px;
+  background: #594f8d;
+  height: 40px;
+  line-height: 45px;
+  text-align: center;
+  margin: 0 5px;
+  color: #bdb8d7;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.wrapper .main_content{
+  width: 100%;
+  margin-left: 200px;
+}
+
+.wrapper .main_content .header{
+  padding: 20px;
+  background: #fff;
+  color: #717171;
+  border-bottom: 1px solid #e0e4e8;
+}
+
+.wrapper .main_content .info{
+  margin: 20px;
+  color: #717171;
+  line-height: 25px;
+}
+
+.wrapper .main_content .info div{
+  margin-bottom: 20px;
+}
+
+@media (max-height: 500px){
+  .social_media{
+    display: none !important;
+  }
+}
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+#top{
+
+width:20%;
+position:absolute;
+right:0%;}
+
+
 .custab{
-  border: 1px solid #ccc;
+  border: 1px solid #002a38;
   padding: 5px;
+
   margin: 10% 0;
   box-shadow: 3px 3px 2px #ccc;
   transition: 0.5s;
@@ -16,6 +154,7 @@
 
 #custom-search-input {
   margin:0;
+
   margin-top: 24px;
   padding: 2px;
 }
@@ -23,13 +162,15 @@
   width: 62%;
 }
 #custom-search-input .search-query {
+
   padding-right: 3px;
   padding-right: 4px \9;
-  padding-left: 3px;
-  padding-left: 4px \9;
-  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+  padding-left: 13px;
 
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+width:500px;
   margin-bottom: 0;
+  margin-right:-42%;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 43px;
@@ -39,8 +180,8 @@
   border: 0;
   background: none;
   /** belows styles are working good */
-  padding: 2px 5px;
-  margin-top: 2px;
+  padding: 10px 40px;
+  margin-top: 0.8px;
   position: relative;
   left: -28px;
   /* IE7-8 doesn't have border-radius, so don't indent the padding */
@@ -48,7 +189,7 @@
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  color:green;
+  color:#594f8d;
 }
 
 .search-query:focus + button {
@@ -59,5 +200,207 @@
   display: table;
   border-collapse: separate;
   padding-right: 0px;
-  padding-left: 183px;
+  padding-left: 200px;
+}
+
+
+body {
+    background: #B2CCCC;
+}
+
+#notes li {
+    position: relative;
+    width: 300px;
+    min-height: 50px;
+    margin: 25px auto;
+    margin-right: 250px;
+    padding: 20px 15px 15px 15px;
+    background: #feedab  no-repeat 4px 8px;
+    -webkit-box-shadow: 0 2px 12px rgba(0,0,0,.5);
+    -moz-box-shadow: 0 2px 12px rgba(0,0,0,.5);
+    box-shadow: 0 1px 2px #000;
+    -webkit-transform: rotate(-.5deg);
+    -moz-transform: rotate(-.5deg);
+    -o-transform: rotate(-.5deg);
+}
+
+#notes li:nth-child(even) {
+    -webkit-transform: rotate(.5deg);
+    -moz-transform: rotate(.5deg);
+    -o-transform: rotate(.5deg);
+}
+
+#notes li.kiln
+{
+
+}
+
+#notes li p {
+padding-right:5px;
+    font: normal normal normal 20px/28px  Helvetica, Arial, sans-serif;
+    color: #000;
+    text-shadow: white 1px 1px 0px;
+    overflow:hidden;
+}
+
+#notes li::before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 115px;
+    top: -15px;
+    width: 55px;
+    height: 10px;
+    z-index: 2;
+    background-color: rgba(243,245,228,0.5);
+    border: 2px solid rgba(255,255,255,0.5);
+    -webkit-box-shadow: 0 0 5px #888;
+    -moz-box-shadow: 0 0 5px #888;
+    box-shadow: 2px 2px 2px #000;
+    -webkit-transform: rotate(-6deg);
+    -moz-transform: rotate(-6deg);
+    -o-transform: rotate(-6deg);
+}
+
+#notes li:nth-child(even)::before {
+    -webkit-transform: rotate(6deg);
+    -moz-transform: rotate(6deg);
+    -o-transform: rotate(6deg);
+}
+h2{
+color: #36a7cd; font-family: "Great Vibes", cursive; font-size: 20px; line-height: 60px; font-weight: normal; margin-bottom: 50px; margin-top: 10px; text-align: center; text-shadow: 0 1px 1px #fff; }
+
+
+
+
+
+
+
+
+
+#notes1 li {
+    position: relative;
+    width: 300px;
+    min-height: 50px;
+    margin: 25px auto;
+    padding: 20px 15px 15px 15px;
+    background: #b8e6f9  no-repeat 4px 8px;
+    -webkit-box-shadow: 0 2px 12px rgba(0,0,0,.5);
+    -moz-box-shadow: 0 2px 12px rgba(0,0,0,.5);
+    box-shadow: 0 1px 2px #000;
+    -webkit-transform: rotate(-.5deg);
+    -moz-transform: rotate(-.5deg);
+    -o-transform: rotate(-.5deg);
+}
+
+#notes1 li:nth-child(even) {
+    -webkit-transform: rotate(.5deg);
+    -moz-transform: rotate(.5deg);
+    -o-transform: rotate(.5deg);
+}
+
+#notes1 li.kiln
+{
+
+}
+
+#notes1 li p {
+padding-right:5px;
+    font: normal normal normal 20px/28px  Helvetica, Arial, sans-serif;
+    color: #000;
+    text-shadow: white 1px 1px 0px;
+    overflow:hidden;
+}
+
+#notes1 li::before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 115px;
+    top: -15px;
+    width: 55px;
+    height: 10px;
+    z-index: 2;
+    background-color: rgba(243,245,228,0.5);
+    border: 2px solid rgba(255,255,255,0.5);
+    -webkit-box-shadow: 0 0 5px #888;
+    -moz-box-shadow: 0 0 5px #888;
+    box-shadow: 2px 2px 2px #000;
+    -webkit-transform: rotate(-6deg);
+    -moz-transform: rotate(-6deg);
+    -o-transform: rotate(-6deg);
+}
+
+#notes1 li:nth-child(even)::before {
+    -webkit-transform: rotate(6deg);
+    -moz-transform: rotate(6deg);
+    -o-transform: rotate(6deg);
+}
+
+
+
+
+
+
+
+
+#notes2 li {
+    position: relative;
+        margin-right: 250px;
+
+    width: 300px;
+    min-height: 50px;
+    margin: 25px auto;
+    padding: 20px 15px 15px 15px;
+    background: #efeeff no-repeat 4px 8px;
+    -webkit-box-shadow: 0 2px 12px rgba(0,0,0,.5);
+    -moz-box-shadow: 0 2px 12px rgba(0,0,0,.5);
+    box-shadow: 0 1px 2px #000;
+    -webkit-transform: rotate(-.5deg);
+    -moz-transform: rotate(-.5deg);
+    -o-transform: rotate(-.5deg);
+}
+
+#notes2 li:nth-child(even) {
+    -webkit-transform: rotate(.5deg);
+    -moz-transform: rotate(.5deg);
+    -o-transform: rotate(.5deg);
+}
+
+#notes2 li.kiln
+{
+
+}
+
+#notes2 li p {
+padding-right:5px;
+    font: normal normal normal 20px/28px  Helvetica, Arial, sans-serif;
+    color: #000;
+    text-shadow: white 1px 1px 0px;
+    overflow:hidden;
+}
+
+#notes2 li::before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 115px;
+    top: -15px;
+    width: 55px;
+    height: 10px;
+    z-index: 2;
+    background-color: rgba(243,245,228,0.5);
+    border: 2px solid rgba(255,255,255,0.5);
+    -webkit-box-shadow: 0 0 5px #888;
+    -moz-box-shadow: 0 0 5px #888;
+    box-shadow: 2px 2px 2px #000;
+    -webkit-transform: rotate(-6deg);
+    -moz-transform: rotate(-6deg);
+    -o-transform: rotate(-6deg);
+}
+
+#notes2 li:nth-child(even)::before {
+    -webkit-transform: rotate(6deg);
+    -moz-transform: rotate(6deg);
+    -o-transform: rotate(6deg);
 }

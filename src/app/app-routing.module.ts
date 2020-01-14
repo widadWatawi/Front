@@ -11,10 +11,11 @@ import {PhaseFormComponent} from "./components/phase-form/phase-form.component";
 import {TacheFormComponent} from "./components/tache-form/tache-form.component";
 import {TacheListComponent} from "./components/tache-list/tache-list.component";
 import {AffectationListComponent} from "./components/affectation-list/affectation-list.component";
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
    {path:"",redirectTo:"login",pathMatch:"full"},
-
+    {path:"profil",component: ProfileComponent},
     {path:"bar-chart",component: MyBarChartComponent},
     {path:"dashboard",component: DashboardComponent},
     {path:"login",component:AuthComponent},

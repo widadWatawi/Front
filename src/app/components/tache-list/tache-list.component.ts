@@ -13,6 +13,7 @@ import { AffectationService} from "../../shared_services/affectation.service";
 export class TacheListComponent implements OnInit {
 
   taches:any;
+  taches2:any;
   phase_id:number;
   name:string;
 
@@ -22,6 +23,7 @@ export class TacheListComponent implements OnInit {
     this.phase_id=this.service.phase_id;
     let resp=this.service.getTache(this.phase_id);
     resp.subscribe((data)=>this.taches=data);
+  resp.subscribe((data)=>this.taches2=data);
   }
 
   public addTache(){

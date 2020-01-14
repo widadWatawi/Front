@@ -1,4 +1,22 @@
 <div class="container-fluid">
+  <div class="wrapper">
+
+    <div class="sidebar">
+      <div class="img">
+        <img class="wave" src="assets/img/1.PNG">
+      </div>
+      <ul>
+        <li><a [routerLink]="['/bar-chart']"><i class="fas fa-home"></i>Home</a></li>
+        <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
+        <li><a href="#"><i class="fas fa-address-card"></i>Services</a></li>
+        <li><a [routerLink]="['/search']"><i class="fas fa-project-diagram"></i>Projects</a></li>
+        <li><a [routerLink]="['/affectation']" ><i class="fas fa-blog"></i>Workers</a></li>
+        <li><a href="#"><i class="fas fa-address-book"></i>Contact</a></li>
+        <li><a href="#"><i class="fas fa-map-pin"></i>Deconnexion</a></li>
+      </ul>
+    </div>
+  </div>
+
   <app-footer></app-footer>
   <router-outlet></router-outlet>
 

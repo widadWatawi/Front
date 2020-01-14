@@ -12,6 +12,7 @@ import {TacheFormComponent} from "./components/tache-form/tache-form.component";
 import {TacheListComponent} from "./components/tache-list/tache-list.component";
 import {AffectationListComponent} from "./components/affectation-list/affectation-list.component";
 import {EditProjetComponent} from "./components/edit-projet/edit-projet.component";
+import {ProfileComponent} from "./profile/profile.component";
 
 const routes: Routes = [
    {path:"",redirectTo:"login",pathMatch:"full"},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:"bar-chart",component: MyBarChartComponent},
   {path:"dashboard",component: DashboardComponent},
   {path:"login",component:AuthComponent,data: { title: 'welcome', toolbar: false}},
+  {path:"profil",component: ProfileComponent},
   {path:"register",component:ProjectRegistrationComponent},
   {path:"search",component:ProjectSearchDeleteComponent},
   {path:"phaseForm",component:PhaseFormComponent},

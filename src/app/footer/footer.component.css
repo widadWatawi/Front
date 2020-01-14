@@ -35,7 +35,8 @@ li:hover ~ li p {
 /* below is just for demo styling */
 
 div {
-position: absolute;
+ position: fixed;
+ z-index: 10;
 bottom : 0;
 left:0;
 padding-top:1%;

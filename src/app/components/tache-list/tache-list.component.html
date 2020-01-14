@@ -2,107 +2,69 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
+<div class="container-fluid">
+  <div class="wrapper" >
+  </div>
 
-
-<div class="container">
-  <div class="row">
-    <div id="custom-search-input">
-      <div class="input-group col-md-12" style="text-align: center">
+  <div class="row" >
+    <div id="custom-search-input"   >
+      <div class="input-group col-md-9" style="text-align: center">
         <input type="text" class="search-query form-control" placeholder="Search With Email Address"  name="email" [(ngModel)]="name"/>
         <span class="input-group-btn">
           <button class="btn btn-danger" type="button" (click)="findTacheByName()">
-            <span class=" glyphicon glyphicon-search"></span>
-          </button>
+            <span class=" glyphicon glyphicon-search"></span> </button>
         </span>
       </div>
     </div>
   </div>
-</div>
-<div class="container">
-  <div class="container">
-    <div class="row col-md-6 col-md-offset-2 custyle">
-      <table class="table table-striped custab" *ngIf="user.fonction.nom=='chef'">
-        <thead>
-        <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>Statut</th>
-          <th>Collaborateur</th>
-          <th>Supprimer</th>
-          <th>Modifier</th>
-          <th>Affecter</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let tache of taches">
-          <td>{{tache.id}}</td>
-          <td>{{tache.nom}}</td>
-          <td>{{tache.statut}}</td>
-          <td>{{tache.collaborateur.nom}}</td>
-          <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteTache(tache.id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
-          <td class="text-center"><button class="btn btn-success btn-xs"  (click)="updateTache(tache)"><span class="glyphicon glyphicon-remove"></span> Edit </button></td>
-          <td class="text-center"><button class="btn btn-danger btn-xs" (click)="getEmployees(tache.id)"><span class="glyphicon glyphicon-remove"></span> Affecter</button></td>
+  <div class="row" id="notes">
+    <div class="col-md-2 "></div>
+    <div class="col-md-5 ">
 
-        </tr>
-        </tbody>
-      </table>
+      <ul >
+        <h3 style="text-align: center"> TO DO </h3>
+        <div *ngFor="let tache of taches2">
+          <li  *ngIf="tache.statut=='nonAccomplie' ">
+            <a href="#" >
+              <td > <button class="btn btn-link"  (click)="deleteTache(tache.id)"><img class="wave" style="width:25%" src="assets/img/x.png"></button></td>
+              <h2>{{tache.nom}}</h2>
+              <p>{{tache.statut}}</p>
+              <p>{{tache.collaborateur.nom}}</p>
+              <br>
+              <td class="text-center"><button class="btn btn-link"  (click)="updateTache(tache)"><img class="wave2" style="width:180%" src="assets/img/edit.png"> </button></td>
+              <td class="text-center"><button class="btn btn-link" (click)="validerTache(tache.id)"><img class="wave1" style="width:320%" src="assets/img/validate.png"> </button></td>
+              <td class="text-center"><button class="btn btn-link"  (click)="getEmployees(tache.id)"><img class="wave1" style="width:360%" src="assets/img/affecter.png"> </button></td>
+            </a>
+          </li>
+        </div>
+      </ul>
 
-      <table class="table table-striped custab" *ngIf="user.fonction.nom=='Directeur'">
-        <thead>
-        <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>Statut</th>
-          <th>Collaborateur</th>
-          <th>Supprimer</th>
-          <th>Modifier</th>
-          <th>Affecter</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let tache of taches">
-          <td>{{tache.id}}</td>
-          <td>{{tache.nom}}</td>
-          <td>{{tache.statut}}</td>
-          <td>{{tache.collaborateur.nom}}</td>
-          <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteTache(tache.id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
-          <td class="text-center"><button class="btn btn-success btn-xs"  (click)="updateTache(tache)"><span class="glyphicon glyphicon-remove"></span> Edit </button></td>
-          <td class="text-center"><button class="btn btn-danger btn-xs" (click)="getEmployees(tache.id)"><span class="glyphicon glyphicon-remove"></span> Affecter</button></td>
+    </div >
+    <div class="col-md-5 ">
 
-        </tr>
-        </tbody>
-      </table>
+      <ul >
+        <h3 style="text-align: center"> DONE </h3>
+        <div *ngFor="let tache of taches">
+          <li  *ngIf="tache.statut=='Accomplie' ">
+            <a href="#" >
+              <td > <button class="btn btn-link"  (click)="deleteTache(tache.id)"><img class="wave" style="width:25%" src="assets/img/x.png"></button></td>
+              <h2>{{tache.nom}}</h2>
+              <p>{{tache.statut}}</p>
+              <p>{{tache.collaborateur.nom}}</p>
+              <br>
+            </a>
+          </li>
+        </div>
+      </ul>
 
-
-      <table class="table table-striped custab" *ngIf="user.fonction.nom=='Employee'">
-        <thead>
-        <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>Statut</th>
-          <th>Collaborateur</th>
-          <th>Valider</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let tache of taches">
-          <td>{{tache.id}}</td>
-          <td>{{tache.nom}}</td>
-          <td>{{tache.statut}}</td>
-          <td>{{tache.collaborateur.nom}}</td>
-         <td class="text-center"><button class="btn btn-danger btn-xs" (click)="validerTache(tache.id)"><span class="glyphicon glyphicon-remove"></span> Valider</button></td>
-
-        </tr>
-        </tbody>
-      </table>
-
-
-
-
-      <button class="btn btn-primary" (click)="addTache()"><span class="glyphicon glyphicon-remove"></span>Ajouter Tache </button>
-
-    </div>
+    </div >
   </div>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8" > <img class="pens" style="width:7%; margin-top:-6%"  src="assets/img/pens.PNG"></div>
+    <div class="col-md-2">
+      <button class="btn btn-link" (click)="addTache()"><img class="wave3" style="width:100%" src="assets/img/add.png"> </button>
+    </div>
 
+  </div>
 </div>
-

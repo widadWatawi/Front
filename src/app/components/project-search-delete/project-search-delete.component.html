@@ -1,113 +1,107 @@
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<link href='http://fonts.googleapis.com/css?family=Reenie+Beanie&amp;subset=latin' rel='stylesheet' type='text/css'>
 
-<div class="container">
-  <div class="row">
-    <div id="custom-search-input">
-      <div class="input-group col-md-12" style="text-align: center">
-        <input type="text" class="search-query form-control" placeholder="Search With Email Address"  name="email" [(ngModel)]="name"/>
-        <span class="input-group-btn">
-          <h1>{{user.fonction.nom}}</h1>
+<!------ Include the above in your HEAD tag ---------->
+<div class="container" style="margin-right:-1px">
+  <div class="wrapper" >
+
+
+
+    <div class="row">
+      <div id="custom-search-input">
+        <div class="input-group col-md-12" style="text-align: center">
+          <input type="text" class="search-query form-control" placeholder="Search With Email Address"  name="email" [(ngModel)]="name"/>
+          <span class="input-group-btn">
           <button class="btn btn-danger" type="button" (click)="findProjectByName()">
             <span class=" glyphicon glyphicon-search"></span>
           </button>
         </span>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="container">
-  <div class="container">
-    <div class="row col-md-6 col-md-offset-2 custyle">
-      <table class="table table-striped custab" *ngIf="user.fonction.nom=='Directeur'" >
-        <thead>
-        <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>Duree</th>
-          <th>Statut</th>
-          <th>Chef</th>
-          <th>Supprimer</th>
-          <th>Modifier</th>
-          <th>Valider</th>
-          <th>Affecter</th>
-          <th>Voire phases</th>
-        </tr>
-        </thead>
-        <tbody >
-        <tr  *ngFor="let projet of projets">
-          <td>{{projet.id}}</td>
-          <td>{{projet.nom}}</td>
-          <td>{{projet.duree}}</td>
-          <td>{{projet.statut}}</td>
-          <td>{{projet.chef.nom}}</td>
-          <td  class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteProject(projet.id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
-          <td class="text-center"><button class="btn btn-success btn-xs" (click)="updateProject(projet)"><span class="glyphicon glyphicon-remove"></span> Edit </button></td>
-          <td class="text-center"><button class="btn btn-danger btn-xs" (click)="validerProject(projet.id)"><span class="glyphicon glyphicon-remove"></span> Valider</button></td>
-          <td class="text-center"><button class="btn btn-xs" (click)="getChefs(projet.id)"><span class="glyphicon glyphicon-remove"></span> Affecter </button></td>
-          <td class="text-center"><button class="btn btn-xs" (click)="getPhases(projet.id)"><span class="glyphicon glyphicon-remove"></span> Phases </button></td>
 
-        </tr>
-        </tbody>
+  <div class="row no-padding">
+    <div class="col-md-4">
 
-      </table>
+      <ul id="notes" >
+        <h2 style="text-align: center"> TO DO </h2>
+        <div *ngFor="let projet of projets3"  >
+          <li  *ngIf="projet.statut=='afaire'">
 
+            <p >{{projet.nom}}</p>
+            <p >Durée: {{projet.duree}} Jours</p>
+            <p>{{projet.chef.nom}}</p>
 
-      <table class="table table-striped custab" *ngIf="user.fonction.nom=='Employee'" >
-        <thead>
-        <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>Duree</th>
-          <th>Statut</th>
-          <th>Chef</th>
-          <th>Voire phases</th>
-        </tr>
-        </thead>
-        <tbody >
-        <tr  *ngFor="let projet of projets_employees">
-          <td>{{projet.id}}</td>
-          <td>{{projet.nom}}</td>
-          <td>{{projet.duree}}</td>
-          <td>{{projet.statut}}</td>
-          <td>{{projet.chef.nom}}</td>
-         <td class="text-center"><button class="btn btn-xs" (click)="getPhases(projet.id)"><span class="glyphicon glyphicon-remove"></span> Phases </button></td>
+            <td class="text-center"><button class="btn btn-link"  (click)="deleteProject(projet.id)"><img class="wave" style="width:60%" src="assets/img/delete.png"></button></td>
+            <td class="text-center"><button class="btn btn-link"  (click)="updateProject(projet)"><img class="wave" style="width:80%" src="assets/img/edit.png"> </button></td>
+            <td class="text-center"><button class="btn btn-link" (click)="validerProject(projet.id)"><img class="wave" style="width:85%" src="assets/img/valider.png"> </button></td>
+            <td class="text-center"><button class="btn btn-link" (click)="getChefs(projet.id)"><img class="wave" style="width:95%" src="assets/img/affecter.png"> </button></td>
+            <td class="text-center"><button class="btn btn-link" (click)="getPhases(projet.id)"><img class="wave" style="width:92%" src="assets/img/phases.png"></button></td>
 
-        </tr>
-        </tbody>
+          </li>
+        </div>
 
-      </table>
+      </ul>
+    </div>
 
+    <div class="col-md-4">
 
+      <ul id="notes1" >
+        <h2 style="text-align: center"> IN PROGRESS </h2>
+        <div *ngFor="let projet of projets2"  >
+          <li class="kiln"  *ngIf="projet.statut=='inProgress'">
 
-      <table class="table table-striped custab" *ngIf="user.fonction.nom=='chef'" >
-        <thead>
-        <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>Duree</th>
-          <th>Statut</th>
-          <th>Chef</th>
-          <th>Voire phases</th>
-        </tr>
-        </thead>
-        <tbody >
-        <tr  *ngFor="let projet of projets_chefs">
-          <td>{{projet.id}}</td>
-          <td>{{projet.nom}}</td>
-          <td>{{projet.duree}}</td>
-          <td>{{projet.statut}}</td>
-          <td>{{projet.chef.nom}}</td>
-          <td class="text-center"><button class="btn btn-xs" (click)="getPhases(projet.id)"><span class="glyphicon glyphicon-remove"></span> Phases </button></td>
+            <p >{{projet.nom}}</p>
+            <p >Durée: {{projet.duree}} Jours</p>
+            <p>{{projet.chef.nom}}</p>
 
-        </tr>
-        </tbody>
+            <td class="text-center"><button class="btn btn-link"  (click)="deleteProject(projet.id)"><img class="wave" style="width:60%" src="assets/img/delete.png"></button></td>
+            <td class="text-center"><button class="btn btn-link"  (click)="updateProject(projet)"><img class="wave" style="width:80%" src="assets/img/edit.png"> </button></td>
+            <td class="text-center"><button class="btn btn-link" (click)="validerProject(projet.id)"><img class="wave" style="width:85%" src="assets/img/valider.png"> </button></td>
+            <td class="text-center"><button class="btn btn-link" (click)="getChefs(projet.id)"><img class="wave" style="width:95%" src="assets/img/affecter.png"> </button></td>
+            <td class="text-center"><button class="btn btn-link" (click)="getPhases(projet.id)"><img class="wave" style="width:92%" src="assets/img/phases.png"></button></td>
 
-      </table>
+          </li>
+        </div>
 
+      </ul>
+    </div>
+
+    <div class="col-md-4">
+
+      <ul id="notes2" >
+        <h2 style="text-align: center"> DONE </h2>
+        <div *ngFor="let projet of projets"  >
+          <li class="kiln"  *ngIf="projet.statut=='done'">
+
+            <p >{{projet.nom}}</p>
+            <p >Durée: {{projet.duree}} Jours</p>
+            <p>{{projet.chef.nom}}</p>
+
+            <td class="text-center"><button class="btn btn-link"  (click)="deleteProject(projet.id)"><img class="wave" style="width:60%" src="assets/img/delete.png"></button></td>
+            <td class="text-center"><button class="btn btn-link"  (click)="updateProject(projet)"><img class="wave" style="width:80%" src="assets/img/edit.png"> </button></td>
+            <td class="text-center"><button class="btn btn-link" (click)="validerProject(projet.id)"><img class="wave" style="width:85%" src="assets/img/valider.png"> </button></td>
+            <td class="text-center"><button class="btn btn-link" (click)="getChefs(projet.id)"><img class="wave" style="width:95%" src="assets/img/affecter.png"> </button></td>
+            <td class="text-center"><button class="btn btn-link" (click)="getPhases(projet.id)"><img class="wave" style="width:92%" src="assets/img/phases.png"></button></td>
+
+          </li>
+        </div>
+
+      </ul>
+    </div>
+
+    <div style="
+    margin-top:33%;
+    margin-left:28%;
+position:fixed;
+  z-index: 13">
+      <a [routerLink]="['/register']"><button class="btn btn-link" ><img class="wave3" style="width:100%; margin-right:-1000%" src="assets/img/add.png"> </button></a>
     </div>
   </div>
+
+
 
 </div>

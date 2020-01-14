@@ -1,35 +1,177 @@
+*{
+  margin:0;
+  padding:0;
+}
+body{
+  font-family:arial,sans-serif;
+  font-size:100%;
+  margin:3em;
+  background:#666;
+  color:#fff;
+}
+h2,p{
+  font-size:100%;
+  font-weight:normal;
+}
+ul,li{
+  list-style:none;
+}
+ul{
+  overflow:hidden;
+  padding:3em;
+}
+ul li a{
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:10em;
+  width:10em;
+  padding:1em;
+}
+ul li{
+  margin:1em;
+  float:left;
+}
+
+ul li h2{
+  font-size:110%;
+  font-weight:bold;
+  padding-bottom:10px;
+}
+ul li p{
+  font-family:"Reenie Beanie",arial,sans-serif;
+  font-size:100%;
+}
+
+ul li a{
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:10em;
+  width:10em;
+  padding:1em;
+  /* Firefox */
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  /* Safari+Chrome */
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  /* Opera */
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+}
+
+ul li a{
+  -webkit-transform:rotate(-6deg);
+  -o-transform:rotate(-6deg);
+  -moz-transform:rotate(-6deg);
+}
+ul li:nth-child(even) a{
+  -o-transform:rotate(4deg);
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+  position:relative;
+  top:5px;
+}
+ul li:nth-child(3n) a{
+  -o-transform:rotate(-3deg);
+  -webkit-transform:rotate(-3deg);
+  -moz-transform:rotate(-3deg);
+  position:relative;
+  top:-5px;
+}
+ul li:nth-child(5n) a{
+  -o-transform:rotate(5deg);
+  -webkit-transform:rotate(5deg);
+  -moz-transform:rotate(5deg);
+  position:relative;
+  top:-10px;
+}
+
+ul li a:hover,ul li a:focus{
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position:relative;
+  z-index:5;
+}
+ul li a{
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:10em;
+  width:10em;
+  padding:1em;
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  -moz-transition:-moz-transform .15s linear;
+  -o-transition:-o-transform .15s linear;
+  -webkit-transition:-webkit-transform .15s linear;
+}
+
+ul li:nth-child(even) a{
+  -o-transform:rotate(4deg);
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+  position:relative;
+  top:5px;
+  background:#cfc;
+}
+ul li:nth-child(3n) a{
+  -o-transform:rotate(-3deg);
+  -webkit-transform:rotate(-3deg);
+  -moz-transform:rotate(-3deg);
+  position:relative;
+  top:-5px;
+  background:#ccf;
+}
+.wave3{
+
+}
+
+.wave{
+  margin-right:-130%;
+  margin-top:-40%;
+}
+.wave1{
+  margin-top:-390%;
+
+}
+.wave2{
+  margin-top:-210%;
+}
+#notes{
+  height:400px;
+}
 
 
-.custab{
-  border: 1px solid #ccc;
-  padding: 5px;
-  margin: 10% 0;
-  box-shadow: 3px 3px 2px #ccc;
-  transition: 0.5s;
-}
-.custab:hover{
-  box-shadow: 3px 3px 0px transparent;
-  transition: 0.5s;
-}
+
+
 
 
 
 #custom-search-input {
   margin:0;
   margin-top: 24px;
-  padding: 2px;
+  padding-left: 28%;
 }
 .col-md-12 {
   width: 62%;
 }
 #custom-search-input .search-query {
-  padding-right: 3px;
-  padding-right: 4px \9;
-  padding-left: 3px;
-  padding-left: 4px \9;
-  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+  margin-right:-42%;
+  padding-right: 30px;
+  padding-right: 44px \9;
+  padding-left: 13px;
 
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+  width:300px;
   margin-bottom: 0;
+
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 43px;
@@ -39,8 +181,8 @@
   border: 0;
   background: none;
   /** belows styles are working good */
-  padding: 2px 5px;
-  margin-top: 2px;
+  padding: 10px 40px;
+  margin-top: 0.8px;
   position: relative;
   left: -28px;
   /* IE7-8 doesn't have border-radius, so don't indent the padding */
@@ -48,7 +190,7 @@
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  color:green;
+  color:#594f8d;
 }
 
 .search-query:focus + button {
@@ -59,5 +201,8 @@
   display: table;
   border-collapse: separate;
   padding-right: 0px;
-  padding-left: 183px;
+  padding-left: 200px;
 }
+
+h3{
+  color: #36a7cd; font-family: "Great Vibes", cursive; font-size: 20px; line-height: 60px; font-weight: normal; margin-bottom: 50px; margin-top: 10px; text-align: center; text-shadow: 0 1px 1px #fff; }

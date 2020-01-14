@@ -8,33 +8,31 @@
 
 <div class="container">
   <div class="row">
+    <div class="col-md-2"></div>
     <div class="col-md-6">
-      <form>
-        <fieldset>
-          <legend class="text-center">Valid information is required to register. <span class="req"><small>
-                                required *</small></span></legend>
 
-          <div class="form-group">
-            <label for="nom"><span class="req">* </span> Name: <small>This will be your login user
-              name</small> </label>
+
+      <form class="form-style-9">
+        <h1> Ajouter une Tache</h1>
+        <ul>
+          <li>
+
             <input required type="text" [(ngModel)]="tache.nom" name="name" id="nom"
-                   class="form-control phone" maxlength="28" placeholder="Enter your fullname..." />
-          </div>
+                   class="field-style field-full align-none" maxlength="28" placeholder="Enterle nom de la tache..." />
+          </li>
+          <li>
+             <input required type="text" [(ngModel)]="tache.statut" name="name" id="statut"
+                    class="field-style field-full align-none"  maxlength="28" placeholder="Statut..." />
 
-          <div class="form-group">
-            <label for="nom"><span class="req">* </span> Name: <small>This will be your login user
-              name</small> </label>
-            <input required type="text" [(ngModel)]="tache.statut" name="name" id="statut"
-                   class="form-control phone" maxlength="28" placeholder="Enter your fullname..." />
-          </div>
-
-
-
-          <div class="form-group">
+          </li>
+          <li>
             <input class="btn btn-success" type="submit" name="submit_reg" value="Register" (click)="save()">
-          </div>
-        </fieldset>
-      </form><!-- ends register form -->
+
+          </li>
+        </ul>
+      </form>
+
+      <!-- ends register form -->
       <!-- second for to fiter user-->
     </div><!-- ends col-6 -->
 

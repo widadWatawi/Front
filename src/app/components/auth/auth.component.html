@@ -4,8 +4,7 @@
 
   </div>
   <div  class="login-container" >
-    <form method="post" action="/search">
-    <div>
+    <form>
       <img class="avatar" src="assets/img/avatar.svg">
       <h2>welcome</h2>
       <div class="input-dev one">
@@ -17,7 +16,7 @@
         <div>
           <br>
 
-          <input class="input" id="usr" type="text" [(ngModel)]="login" placeholder="Username">
+          <input class="input"  [(ngModel)]="login" id="usr" type="text" placeholder="Username">
         </div>
       </div>
 
@@ -30,13 +29,12 @@
         <div>
 
 
-          <input class="input" type="password"  [(ngModel)]="pwd" placeholder="Password">
+          <input class="input"  [(ngModel)]="pwd"  type="password" placeholder="Password">
         </div>
       </div>
       <a href="#">Forgot Password? </a>
       <input type="submit" class="btn" value="Login" (click)="logIn()">
 
-    </div>
     </form>
   </div>
 </div>

@@ -19,21 +19,20 @@
     </div>
   </div>
   </div>
-        <div class="row no-padding">
+        <div class="row no-padding" *ngIf="user.fonction.nom=='Directeur'">
           <div class="col-md-4">
-            <ul id="notes" >
+            <ul class="notes" >
               <h2 style="text-align: center"> TO DO </h2>
               <div *ngFor="let phase of phases" >
-                <li  *ngIf="phase.statut=='afaire'">
+                <li  *ngIf="phase.statut=='todo'">
 
                   <p >{{phase.id}}</p>
-                  <p >Durée: {{phase.statut}} Jours</p>
+                  <p >Delai: {{phase.delai  | date}} </p>
                   <p>{{phase.nom}}</p>
 
 
                   <td class="text-center"><button class="btn btn-link"  (click)="deletePhase(phase.id)"><img class="wave" style="width:60%" src="assets/img/delete.png"></button></td>
                   <td class="text-center"><button class="btn btn-link"  (click)="updatePhase(phase)"><img class="wave" style="width:80%" src="assets/img/edit.png"> </button></td>
-                  <td class="text-center"><button class="btn btn-link" ((click)="validerPhase(phase.id)"><img class="wave" style="width:85%" src="assets/img/valider.png"> </button></td>
                   <td class="text-center"><button class="btn btn-link" (click)="getTaches(phase.id)"><img class="wave" style="width:95%" src="assets/img/taches.png"> </button></td>
                 </li>
               </div>
@@ -41,19 +40,18 @@
             </ul>
           </div>
           <div class="col-md-4">
-            <ul id="notes1" >
+            <ul class="notes1" >
               <h2 style="text-align: center"> IN PROGRESS </h2>
               <div *ngFor="let phase of phases1" >
                 <li  *ngIf="phase.statut=='inprogress'">
 
                   <p >{{phase.id}}</p>
-                  <p >Durée: {{phase.statut}} Jours</p>
+                  <p >Delai: {{phase.delai  | date}} </p>
                   <p>{{phase.nom}}</p>
 
 
                   <td class="text-center"><button class="btn btn-link"  (click)="deletePhase(phase.id)"><img class="wave" style="width:60%" src="assets/img/delete.png"></button></td>
                   <td class="text-center"><button class="btn btn-link"  (click)="updatePhase(phase)"><img class="wave" style="width:80%" src="assets/img/edit.png"> </button></td>
-                  <td class="text-center"><button class="btn btn-link" ((click)="validerPhase(phase.id)"><img class="wave" style="width:85%" src="assets/img/valider.png"> </button></td>
                   <td class="text-center"><button class="btn btn-link" (click)="getTaches(phase.id)"><img class="wave" style="width:95%" src="assets/img/taches.png"> </button></td>
                 </li>
               </div>
@@ -61,19 +59,18 @@
             </ul>
           </div>
           <div class="col-md-4">
-            <ul id="notes2" >
+            <ul class="notes2" >
               <h2 style="text-align: center"> DONE</h2>
               <div *ngFor="let phase of phases2" >
                 <li  *ngIf="phase.statut=='done'">
 
                   <p >{{phase.id}}</p>
-                  <p >Durée: {{phase.statut}} Jours</p>
+                  <p >Delai: {{phase.delai  | date}} </p>
                   <p>{{phase.nom}}</p>
 
 
                   <td class="text-center"><button class="btn btn-link"  (click)="deletePhase(phase.id)"><img class="wave" style="width:60%" src="assets/img/delete.png"></button></td>
                   <td class="text-center"><button class="btn btn-link"  (click)="updatePhase(phase)"><img class="wave" style="width:80%" src="assets/img/edit.png"> </button></td>
-                  <td class="text-center"><button class="btn btn-link" ((click)="validerPhase(phase.id)"><img class="wave" style="width:85%" src="assets/img/valider.png"> </button></td>
                   <td class="text-center"><button class="btn btn-link" (click)="getTaches(phase.id)"><img class="wave" style="width:95%" src="assets/img/taches.png"> </button></td>
                 </li>
               </div>
@@ -88,6 +85,137 @@
       </div>
 
     </div>
+
+  <div class="row no-padding" *ngIf="user.fonction.nom=='Employee'">
+    <div class="col-md-4">
+      <ul class="notes" >
+        <h2 style="text-align: center"> TO DO </h2>
+        <div *ngFor="let phase of phases" >
+          <li  *ngIf="phase.statut=='todo'">
+
+            <p >{{phase.id}}</p>
+            <p >Delai: {{phase.delai  | date}} </p>
+            <p>{{phase.nom}}</p>
+
+
+            <td class="text-center"><button class="btn btn-link" (click)="getTaches(phase.id)"><img class="wave" style="width:95%" src="assets/img/taches.png"> </button></td>
+          </li>
+        </div>
+
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <ul class="notes1" >
+        <h2 style="text-align: center"> IN PROGRESS </h2>
+        <div *ngFor="let phase of phases1" >
+          <li  *ngIf="phase.statut=='inprogress'">
+
+            <p >{{phase.id}}</p>
+            <p >Delai: {{phase.delai  | date}} </p>
+            <p>{{phase.nom}}</p>
+
+
+            <td class="text-center"><button class="btn btn-link" (click)="getTaches(phase.id)"><img class="wave" style="width:95%" src="assets/img/taches.png"> </button></td>
+          </li>
+        </div>
+
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <ul class="notes2" >
+        <h2 style="text-align: center"> DONE</h2>
+        <div *ngFor="let phase of phases2" >
+          <li  *ngIf="phase.statut=='done'">
+
+            <p >{{phase.id}}</p>
+            <p >Delai: {{phase.delai  | date}} </p>
+            <p>{{phase.nom}}</p>
+
+
+            <td class="text-center"><button class="btn btn-link" (click)="getTaches(phase.id)"><img class="wave" style="width:95%" src="assets/img/taches.png"> </button></td>
+          </li>
+        </div>
+
+      </ul>
+    </div>
+    <div style="
+      margin-top:33%;
+      position:fixed;
+      z-index: 30">
+      <a [routerLink]="['/phaseForm']"><button class="btn btn-link" ><img class="wave3" style="width:100%; margin-right:-1700%" src="assets/img/add.png"> </button></a>
+    </div>
+
+  </div>
+
+  <div class="row no-padding" *ngIf="user.fonction.nom=='chef'">
+    <div class="col-md-4">
+      <ul class="notes" >
+        <h2 style="text-align: center"> TO DO </h2>
+        <div *ngFor="let phase of phases" >
+          <li  *ngIf="phase.statut=='todo'">
+
+            <p >{{phase.id}}</p>
+            <p >Delai: {{phase.delai  | date}} </p>
+            <p>{{phase.nom}}</p>
+
+
+            <td class="text-center"><button class="btn btn-link"  (click)="deletePhase(phase.id)"><img class="wave" style="width:60%" src="assets/img/delete.png"></button></td>
+            <td class="text-center"><button class="btn btn-link"  (click)="updatePhase(phase)"><img class="wave" style="width:80%" src="assets/img/edit.png"> </button></td>
+            <td class="text-center"><button class="btn btn-link" ((click)="validerPhase(phase.id)"><img class="wave" style="width:85%" src="assets/img/valider.png"> </button></td>
+            <td class="text-center"><button class="btn btn-link" (click)="getTaches(phase.id)"><img class="wave" style="width:95%" src="assets/img/taches.png"> </button></td>
+          </li>
+        </div>
+
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <ul class="notes1" >
+        <h2 style="text-align: center"> IN PROGRESS </h2>
+        <div *ngFor="let phase of phases1" >
+          <li  *ngIf="phase.statut=='inprogress'">
+
+            <p >{{phase.id}}</p>
+            <p >Delai: {{phase.delai  | date}}  </p>
+            <p>{{phase.nom}}</p>
+
+
+            <td class="text-center"><button class="btn btn-link"  (click)="deletePhase(phase.id)"><img class="wave" style="width:60%" src="assets/img/delete.png"></button></td>
+            <td class="text-center"><button class="btn btn-link"  (click)="updatePhase(phase)"><img class="wave" style="width:80%" src="assets/img/edit.png"> </button></td>
+            <td class="text-center"><button class="btn btn-link" ((click)="validerPhase(phase.id)"><img class="wave" style="width:85%" src="assets/img/valider.png"> </button></td>
+            <td class="text-center"><button class="btn btn-link" (click)="getTaches(phase.id)"><img class="wave" style="width:95%" src="assets/img/taches.png"> </button></td>
+          </li>
+        </div>
+
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <ul class="notes2" >
+        <h2 style="text-align: center"> DONE</h2>
+        <div *ngFor="let phase of phases2" >
+          <li  *ngIf="phase.statut=='done'">
+
+            <p >{{phase.id}}</p>
+            <p >Delai: {{phase.delai  | date}} </p>
+            <p>{{phase.nom}}</p>
+
+
+            <td class="text-center"><button class="btn btn-link"  (click)="deletePhase(phase.id)"><img class="wave" style="width:60%" src="assets/img/delete.png"></button></td>
+            <td class="text-center"><button class="btn btn-link"  (click)="updatePhase(phase)"><img class="wave" style="width:80%" src="assets/img/edit.png"> </button></td>
+            <td class="text-center"><button class="btn btn-link" ((click)="validerPhase(phase.id)"><img class="wave" style="width:85%" src="assets/img/valider.png"> </button></td>
+            <td class="text-center"><button class="btn btn-link" (click)="getTaches(phase.id)"><img class="wave" style="width:95%" src="assets/img/taches.png"> </button></td>
+          </li>
+        </div>
+
+      </ul>
+    </div>
+    <div style="
+      margin-top:33%;
+      position:fixed;
+      z-index: 30">
+      <a [routerLink]="['/phaseForm']"><button class="btn btn-link" ><img class="wave3" style="width:100%; margin-right:-1700%" src="assets/img/add.png"> </button></a>
+    </div>
+
+  </div>
 
 </div>
 

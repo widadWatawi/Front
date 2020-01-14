@@ -208,67 +208,68 @@ body {
     background: #B2CCCC;
 }
 
-#notes li {
-    position: relative;
-    width: 300px;
-    min-height: 50px;
-    margin: 25px auto;
-    margin-right: 250px;
-    padding: 20px 15px 15px 15px;
-    background: #feedab  no-repeat 4px 8px;
-    -webkit-box-shadow: 0 2px 12px rgba(0,0,0,.5);
-    -moz-box-shadow: 0 2px 12px rgba(0,0,0,.5);
-    box-shadow: 0 1px 2px #000;
-    -webkit-transform: rotate(-.5deg);
-    -moz-transform: rotate(-.5deg);
-    -o-transform: rotate(-.5deg);
+
+.notes li {
+  position: relative;
+  width: 300px;
+  min-height: 50px;
+  margin: 25px auto;
+  margin-right: 250px;
+  padding: 20px 15px 15px 15px;
+  background: #feedab  no-repeat 4px 8px;
+  -webkit-box-shadow: 0 2px 12px rgba(0,0,0,.5);
+  -moz-box-shadow: 0 2px 12px rgba(0,0,0,.5);
+  box-shadow: 0 1px 2px #000;
+  -webkit-transform: rotate(-.5deg);
+  -moz-transform: rotate(-.5deg);
+  -o-transform: rotate(-.5deg);
 }
 
-#notes li:nth-child(even) {
-    -webkit-transform: rotate(.5deg);
-    -moz-transform: rotate(.5deg);
-    -o-transform: rotate(.5deg);
+.notes li:nth-child(even) {
+  -webkit-transform: rotate(.5deg);
+  -moz-transform: rotate(.5deg);
+  -o-transform: rotate(.5deg);
 }
 
-#notes li.kiln
+.notes li.kiln
 {
 
 }
 
-#notes li p {
-padding-right:5px;
-    font: normal normal normal 20px/28px  Helvetica, Arial, sans-serif;
-    color: #000;
-    text-shadow: white 1px 1px 0px;
-    overflow:hidden;
+.notes li p {
+  padding-right:5px;
+  font: normal normal normal 20px/28px  Helvetica, Arial, sans-serif;
+  color: #000;
+  text-shadow: white 1px 1px 0px;
+  overflow:hidden;
 }
 
-#notes li::before {
-    content: ' ';
-    display: block;
-    position: absolute;
-    left: 115px;
-    top: -15px;
-    width: 55px;
-    height: 10px;
-    z-index: 2;
-    background-color: rgba(243,245,228,0.5);
-    border: 2px solid rgba(255,255,255,0.5);
-    -webkit-box-shadow: 0 0 5px #888;
-    -moz-box-shadow: 0 0 5px #888;
-    box-shadow: 2px 2px 2px #000;
-    -webkit-transform: rotate(-6deg);
-    -moz-transform: rotate(-6deg);
-    -o-transform: rotate(-6deg);
+.notes li::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 115px;
+  top: -15px;
+  width: 55px;
+  height: 10px;
+  z-index: 2;
+  background-color: rgba(243,245,228,0.5);
+  border: 2px solid rgba(255,255,255,0.5);
+  -webkit-box-shadow: 0 0 5px #888;
+  -moz-box-shadow: 0 0 5px #888;
+  box-shadow: 2px 2px 2px #000;
+  -webkit-transform: rotate(-6deg);
+  -moz-transform: rotate(-6deg);
+  -o-transform: rotate(-6deg);
 }
 
-#notes li:nth-child(even)::before {
-    -webkit-transform: rotate(6deg);
-    -moz-transform: rotate(6deg);
-    -o-transform: rotate(6deg);
+.notes li:nth-child(even)::before {
+  -webkit-transform: rotate(6deg);
+  -moz-transform: rotate(6deg);
+  -o-transform: rotate(6deg);
 }
 h2{
-color: #36a7cd; font-family: "Great Vibes", cursive; font-size: 20px; line-height: 60px; font-weight: normal; margin-bottom: 50px; margin-top: 10px; text-align: center; text-shadow: 0 1px 1px #fff; }
+  color: #36a7cd; font-family: "Great Vibes", cursive; font-size: 20px; line-height: 60px; font-weight: normal; margin-bottom: 50px; margin-top: 10px; text-align: center; text-shadow: 0 1px 1px #fff; }
 
 
 
@@ -278,63 +279,63 @@ color: #36a7cd; font-family: "Great Vibes", cursive; font-size: 20px; line-heigh
 
 
 
-#notes1 li {
-    position: relative;
-    width: 300px;
-    min-height: 50px;
-    margin: 25px auto;
-    padding: 20px 15px 15px 15px;
-    background: #b8e6f9  no-repeat 4px 8px;
-    -webkit-box-shadow: 0 2px 12px rgba(0,0,0,.5);
-    -moz-box-shadow: 0 2px 12px rgba(0,0,0,.5);
-    box-shadow: 0 1px 2px #000;
-    -webkit-transform: rotate(-.5deg);
-    -moz-transform: rotate(-.5deg);
-    -o-transform: rotate(-.5deg);
+.notes1 li {
+  position: relative;
+  width: 300px;
+  min-height: 50px;
+  margin: 25px auto;
+  padding: 20px 15px 15px 15px;
+  background: #b8e6f9  no-repeat 4px 8px;
+  -webkit-box-shadow: 0 2px 12px rgba(0,0,0,.5);
+  -moz-box-shadow: 0 2px 12px rgba(0,0,0,.5);
+  box-shadow: 0 1px 2px #000;
+  -webkit-transform: rotate(-.5deg);
+  -moz-transform: rotate(-.5deg);
+  -o-transform: rotate(-.5deg);
 }
 
-#notes1 li:nth-child(even) {
-    -webkit-transform: rotate(.5deg);
-    -moz-transform: rotate(.5deg);
-    -o-transform: rotate(.5deg);
+.notes1 li:nth-child(even) {
+  -webkit-transform: rotate(.5deg);
+  -moz-transform: rotate(.5deg);
+  -o-transform: rotate(.5deg);
 }
 
-#notes1 li.kiln
+.notes1 li.kiln
 {
 
 }
 
-#notes1 li p {
-padding-right:5px;
-    font: normal normal normal 20px/28px  Helvetica, Arial, sans-serif;
-    color: #000;
-    text-shadow: white 1px 1px 0px;
-    overflow:hidden;
+.notes1 li p {
+  padding-right:5px;
+  font: normal normal normal 20px/28px  Helvetica, Arial, sans-serif;
+  color: #000;
+  text-shadow: white 1px 1px 0px;
+  overflow:hidden;
 }
 
-#notes1 li::before {
-    content: ' ';
-    display: block;
-    position: absolute;
-    left: 115px;
-    top: -15px;
-    width: 55px;
-    height: 10px;
-    z-index: 2;
-    background-color: rgba(243,245,228,0.5);
-    border: 2px solid rgba(255,255,255,0.5);
-    -webkit-box-shadow: 0 0 5px #888;
-    -moz-box-shadow: 0 0 5px #888;
-    box-shadow: 2px 2px 2px #000;
-    -webkit-transform: rotate(-6deg);
-    -moz-transform: rotate(-6deg);
-    -o-transform: rotate(-6deg);
+.notes1 li::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 115px;
+  top: -15px;
+  width: 55px;
+  height: 10px;
+  z-index: 2;
+  background-color: rgba(243,245,228,0.5);
+  border: 2px solid rgba(255,255,255,0.5);
+  -webkit-box-shadow: 0 0 5px #888;
+  -moz-box-shadow: 0 0 5px #888;
+  box-shadow: 2px 2px 2px #000;
+  -webkit-transform: rotate(-6deg);
+  -moz-transform: rotate(-6deg);
+  -o-transform: rotate(-6deg);
 }
 
-#notes1 li:nth-child(even)::before {
-    -webkit-transform: rotate(6deg);
-    -moz-transform: rotate(6deg);
-    -o-transform: rotate(6deg);
+.notes1 li:nth-child(even)::before {
+  -webkit-transform: rotate(6deg);
+  -moz-transform: rotate(6deg);
+  -o-transform: rotate(6deg);
 }
 
 
@@ -344,63 +345,64 @@ padding-right:5px;
 
 
 
-#notes2 li {
-    position: relative;
-        margin-right: 250px;
+.notes2 li {
+  position: relative;
+  margin-right: 250px;
 
-    width: 300px;
-    min-height: 50px;
-    margin: 25px auto;
-    padding: 20px 15px 15px 15px;
-    background: #efeeff no-repeat 4px 8px;
-    -webkit-box-shadow: 0 2px 12px rgba(0,0,0,.5);
-    -moz-box-shadow: 0 2px 12px rgba(0,0,0,.5);
-    box-shadow: 0 1px 2px #000;
-    -webkit-transform: rotate(-.5deg);
-    -moz-transform: rotate(-.5deg);
-    -o-transform: rotate(-.5deg);
+  width: 300px;
+  min-height: 50px;
+  margin: 25px auto;
+  padding: 20px 15px 15px 15px;
+  background: #efeeff no-repeat 4px 8px;
+  -webkit-box-shadow: 0 2px 12px rgba(0,0,0,.5);
+  -moz-box-shadow: 0 2px 12px rgba(0,0,0,.5);
+  box-shadow: 0 1px 2px #000;
+  -webkit-transform: rotate(-.5deg);
+  -moz-transform: rotate(-.5deg);
+  -o-transform: rotate(-.5deg);
 }
 
-#notes2 li:nth-child(even) {
-    -webkit-transform: rotate(.5deg);
-    -moz-transform: rotate(.5deg);
-    -o-transform: rotate(.5deg);
+.notes2 li:nth-child(even) {
+  -webkit-transform: rotate(.5deg);
+  -moz-transform: rotate(.5deg);
+  -o-transform: rotate(.5deg);
 }
 
-#notes2 li.kiln
+.notes2 li.kiln
 {
 
 }
 
-#notes2 li p {
-padding-right:5px;
-    font: normal normal normal 20px/28px  Helvetica, Arial, sans-serif;
-    color: #000;
-    text-shadow: white 1px 1px 0px;
-    overflow:hidden;
+.notes2 li p {
+  padding-right:5px;
+  font: normal normal normal 20px/28px  Helvetica, Arial, sans-serif;
+  color: #000;
+  text-shadow: white 1px 1px 0px;
+  overflow:hidden;
 }
 
-#notes2 li::before {
-    content: ' ';
-    display: block;
-    position: absolute;
-    left: 115px;
-    top: -15px;
-    width: 55px;
-    height: 10px;
-    z-index: 2;
-    background-color: rgba(243,245,228,0.5);
-    border: 2px solid rgba(255,255,255,0.5);
-    -webkit-box-shadow: 0 0 5px #888;
-    -moz-box-shadow: 0 0 5px #888;
-    box-shadow: 2px 2px 2px #000;
-    -webkit-transform: rotate(-6deg);
-    -moz-transform: rotate(-6deg);
-    -o-transform: rotate(-6deg);
+.notes2 li::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 115px;
+  top: -15px;
+  width: 55px;
+  height: 10px;
+  z-index: 2;
+  background-color: rgba(243,245,228,0.5);
+  border: 2px solid rgba(255,255,255,0.5);
+  -webkit-box-shadow: 0 0 5px #888;
+  -moz-box-shadow: 0 0 5px #888;
+  box-shadow: 2px 2px 2px #000;
+  -webkit-transform: rotate(-6deg);
+  -moz-transform: rotate(-6deg);
+  -o-transform: rotate(-6deg);
 }
 
-#notes2 li:nth-child(even)::before {
-    -webkit-transform: rotate(6deg);
-    -moz-transform: rotate(6deg);
-    -o-transform: rotate(6deg);
+.notes2 li:nth-child(even)::before {
+  -webkit-transform: rotate(6deg);
+  -moz-transform: rotate(6deg);
+  -o-transform: rotate(6deg);
 }
+

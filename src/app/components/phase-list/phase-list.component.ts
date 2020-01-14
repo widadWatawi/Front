@@ -31,6 +31,7 @@ export class PhaseListComponent implements OnInit {
 
   public getPhases(){
     this.projet_id=this.service.projet_id;
+    sessionStorage.setItem("proj",this.projet_id.toString());
     let resp=this.service.getPhases(this.projet_id);
     resp.subscribe((data)=>this.phases=data);
       resp.subscribe((data)=>this.phases1=data);

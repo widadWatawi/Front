@@ -16,8 +16,6 @@ export class ProjectSearchDeleteComponent implements OnInit {
   projets_chefs:any;
   projets_employees:any;
   projets:any;
-  projets2:any;
-   projets3:any;
   phases:any;
   name:string;
   login:string;
@@ -54,8 +52,6 @@ export class ProjectSearchDeleteComponent implements OnInit {
   public Projets(){
     let resp=this.service.getProjects();
     resp.subscribe((data)=>this.projets=data);
-    resp.subscribe((data)=>this.projets2=data);
-    resp.subscribe((data)=>this.projets3=data);
   }
 
   public deleteProject(id:number){
@@ -85,6 +81,7 @@ export class ProjectSearchDeleteComponent implements OnInit {
   }
 
   public getChefs(id:number){
+    sessionStorage.setItem('projet',id.toString());
     this.serviceAffectation.projet_id=id;
     this.route.navigate(['/affectation']);
   }

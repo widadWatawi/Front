@@ -17,7 +17,7 @@
       </div>
     </div>
   </div>
-  <div class="row" id="notes">
+  <div class="row" class="notes" *ngIf="user.fonction.nom=='Directeur'">
     <div class="col-md-2 "></div>
     <div class="col-md-5 ">
 
@@ -25,11 +25,12 @@
         <h3 style="text-align: center"> TO DO </h3>
         <div *ngFor="let tache of taches2">
           <li  *ngIf="tache.statut=='nonAccomplie' ">
-            <a href="#" >
+            <a>
               <td > <button class="btn btn-link"  (click)="deleteTache(tache.id)"><img class="wave" style="width:25%" src="assets/img/x.png"></button></td>
               <h2>{{tache.nom}}</h2>
               <p>{{tache.statut}}</p>
-              <p>{{tache.collaborateur.nom}}</p>
+              <p *ngIf="tache.collaborateur!=null">{{tache.collaborateur.nom}}</p>
+              <p *ngIf="tache.collaborateur==null">aucun</p>
               <br>
               <td class="text-center"><button class="btn btn-link"  (click)="updateTache(tache)"><img class="wave2" style="width:180%" src="assets/img/edit.png"> </button></td>
               <td class="text-center"><button class="btn btn-link" (click)="validerTache(tache.id)"><img class="wave1" style="width:320%" src="assets/img/validate.png"> </button></td>
@@ -46,12 +47,12 @@
         <h3 style="text-align: center"> DONE </h3>
         <div *ngFor="let tache of taches">
           <li  *ngIf="tache.statut=='Accomplie' ">
-            <a href="#" >
+            <a >
               <td > <button class="btn btn-link"  (click)="deleteTache(tache.id)"><img class="wave" style="width:25%" src="assets/img/x.png"></button></td>
               <h2>{{tache.nom}}</h2>
               <p>{{tache.statut}}</p>
-              <p>{{tache.collaborateur.nom}}</p>
-              <br>
+              <p *ngIf="tache.collaborateur!=null">{{tache.collaborateur.nom}}</p>
+              <p *ngIf="tache.collaborateur==null">aucun</p>              <br>
             </a>
           </li>
         </div>
@@ -59,6 +60,95 @@
 
     </div >
   </div>
+
+
+  <div class="row" class="notes" *ngIf="user.fonction.nom=='Employee'">
+    <div class="col-md-2 "></div>
+    <div class="col-md-5 ">
+
+      <ul >
+        <h3 style="text-align: center"> TO DO </h3>
+        <div *ngFor="let tache of taches2">
+          <li  *ngIf="tache.statut=='nonAccomplie' ">
+            <a>
+              <h2>{{tache.nom}}</h2>
+              <p>{{tache.statut}}</p>
+              <p *ngIf="tache.collaborateur!=null">{{tache.collaborateur.nom}}</p>
+              <p *ngIf="tache.collaborateur==null">aucun</p>              <br>
+              <td class="text-center"><button class="btn btn-link" (click)="validerTache(tache.id)"><img class="wave1" style="width:320%" src="assets/img/validate.png"> </button></td>
+              <td style="visibility: hidden;"class="text-center"><button class="btn btn-link" (click)="validerTache(tache.id)"><img class="wave1" style="width:320%" src="assets/img/validate.png"> </button></td>
+              <td style="visibility: hidden;" class="text-center"><button class="btn btn-link"  (click)="getEmployees(tache.id)"><img class="wave1" style="width:360%" src="assets/img/affecter.png"> </button></td>
+
+            </a>
+          </li>
+        </div>
+      </ul>
+
+    </div >
+    <div class="col-md-5 ">
+
+      <ul >
+        <h3 style="text-align: center"> DONE </h3>
+        <div *ngFor="let tache of taches">
+          <li  *ngIf="tache.statut=='Accomplie' ">
+            <a>
+              <h2>{{tache.nom}}</h2>
+              <p>{{tache.statut}}</p>
+              <p *ngIf="tache.collaborateur!=null">{{tache.collaborateur.nom}}</p>
+              <p *ngIf="tache.collaborateur==null">aucun</p>              <br>
+            </a>
+          </li>
+        </div>
+      </ul>
+
+    </div >
+  </div>
+
+
+  <div class="row" class="notes" *ngIf="user.fonction.nom=='chef'">
+    <div class="col-md-2 "></div>
+    <div class="col-md-5 ">
+
+      <ul >
+        <h3 style="text-align: center"> TO DO </h3>
+        <div *ngFor="let tache of taches2">
+          <li  *ngIf="tache.statut=='nonAccomplie' ">
+            <a>
+              <td > <button class="btn btn-link"  (click)="deleteTache(tache.id)"><img class="wave" style="width:25%" src="assets/img/x.png"></button></td>
+              <h2>{{tache.nom}}</h2>
+              <p>{{tache.statut}}</p>
+              <p *ngIf="tache.collaborateur!=null">{{tache.collaborateur.nom}}</p>
+              <p *ngIf="tache.collaborateur==null">aucun</p>              <br>
+              <td class="text-center"><button class="btn btn-link"  (click)="updateTache(tache)"><img class="wave2" style="width:180%" src="assets/img/edit.png"> </button></td>
+              <td class="text-center"><button class="btn btn-link" (click)="validerTache(tache.id)"><img class="wave1" style="width:320%" src="assets/img/validate.png"> </button></td>
+              <td class="text-center"><button class="btn btn-link"  (click)="getEmployees(tache.id)"><img class="wave1" style="width:360%" src="assets/img/affecter.png"> </button></td>
+            </a>
+          </li>
+        </div>
+      </ul>
+
+    </div >
+    <div class="col-md-5 ">
+
+      <ul >
+        <h3 style="text-align: center"> DONE </h3>
+        <div *ngFor="let tache of taches">
+          <li  *ngIf="tache.statut=='Accomplie' ">
+            <a >
+              <td > <button class="btn btn-link"  (click)="deleteTache(tache.id)"><img class="wave" style="width:25%" src="assets/img/x.png"></button></td>
+              <h2>{{tache.nom}}</h2>
+              <p>{{tache.statut}}</p>
+              <p *ngIf="tache.collaborateur!=null">{{tache.collaborateur.nom}}</p>
+              <p *ngIf="tache.collaborateur==null">aucun</p>              <br>
+            </a>
+          </li>
+        </div>
+      </ul>
+
+    </div >
+  </div>
+
+
   <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8" > <img class="pens" style="width:7%; margin-top:-6%"  src="assets/img/pens.PNG"></div>

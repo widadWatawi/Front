@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {PhaseService} from "../../shared_services/phase.service";
 import { AffectationService} from "../../shared_services/affectation.service";
 import {UserService} from "../../shared_services/user.service";
+import {Location} from "@angular/common";
 
 
 @Component({
@@ -20,7 +21,7 @@ export class TacheListComponent implements OnInit {
   login:string;
   user:any;
 
-  constructor(private service:TacheService, private serviceAffecattion:AffectationService ,private serviceUser:UserService,private route:Router) { }
+  constructor(private service:TacheService, private serviceAffecattion:AffectationService, private location: Location ,private serviceUser:UserService,private route:Router) { }
 
   ngOnInit() {
 
@@ -51,6 +52,8 @@ export class TacheListComponent implements OnInit {
   public deleteTache(id:number){
     let resp= this.service.deleteTache(id);
     resp.subscribe((data)=>this.taches=data);
+    this.route.navigate(['/tacheForm']);
+    this.location.back();
   }
 
   public findTacheByName(){
@@ -61,11 +64,13 @@ export class TacheListComponent implements OnInit {
   public validerTache(id:number){
     let resp= this.service.validerTache(id);
     resp.subscribe((data)=>this.taches=data);
+    this.route.navigate(['/tacheForm']);
+    this.location.back();
   }
 
   public getEmployees(id:number){
     this.serviceAffecattion.tache_id=id;
-    this.route.navigate(['/affectation']);
+    this.route.navigate(['/affectationTaches']);
   }
 
 

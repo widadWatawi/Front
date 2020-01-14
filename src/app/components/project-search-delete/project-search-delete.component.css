@@ -205,7 +205,7 @@ body {
   background: #B2CCCC;
 }
 
-#notes li {
+.notes li {
   position: relative;
   width: 300px;
   min-height: 50px;
@@ -221,18 +221,18 @@ body {
   -o-transform: rotate(-.5deg);
 }
 
-#notes li:nth-child(even) {
+.notes li:nth-child(even) {
   -webkit-transform: rotate(.5deg);
   -moz-transform: rotate(.5deg);
   -o-transform: rotate(.5deg);
 }
 
-#notes li.kiln
+.notes li.kiln
 {
 
 }
 
-#notes li p {
+.notes li p {
   padding-right:5px;
   font: normal normal normal 20px/28px  Helvetica, Arial, sans-serif;
   color: #000;
@@ -240,7 +240,7 @@ body {
   overflow:hidden;
 }
 
-#notes li::before {
+.notes li::before {
   content: ' ';
   display: block;
   position: absolute;
@@ -259,7 +259,7 @@ body {
   -o-transform: rotate(-6deg);
 }
 
-#notes li:nth-child(even)::before {
+.notes li:nth-child(even)::before {
   -webkit-transform: rotate(6deg);
   -moz-transform: rotate(6deg);
   -o-transform: rotate(6deg);
@@ -275,7 +275,7 @@ h2{
 
 
 
-#notes1 li {
+.notes1 li {
   position: relative;
   width: 300px;
   min-height: 50px;
@@ -290,18 +290,18 @@ h2{
   -o-transform: rotate(-.5deg);
 }
 
-#notes1 li:nth-child(even) {
+.notes1 li:nth-child(even) {
   -webkit-transform: rotate(.5deg);
   -moz-transform: rotate(.5deg);
   -o-transform: rotate(.5deg);
 }
 
-#notes1 li.kiln
+.notes1 li.kiln
 {
 
 }
 
-#notes1 li p {
+.notes1 li p {
   padding-right:5px;
   font: normal normal normal 20px/28px  Helvetica, Arial, sans-serif;
   color: #000;
@@ -309,7 +309,7 @@ h2{
   overflow:hidden;
 }
 
-#notes1 li::before {
+.notes1 li::before {
   content: ' ';
   display: block;
   position: absolute;
@@ -328,7 +328,7 @@ h2{
   -o-transform: rotate(-6deg);
 }
 
-#notes1 li:nth-child(even)::before {
+.notes1 li:nth-child(even)::before {
   -webkit-transform: rotate(6deg);
   -moz-transform: rotate(6deg);
   -o-transform: rotate(6deg);
@@ -341,7 +341,7 @@ h2{
 
 
 
-#notes2 li {
+.notes2 li {
   position: relative;
   margin-right: 250px;
 
@@ -358,18 +358,18 @@ h2{
   -o-transform: rotate(-.5deg);
 }
 
-#notes2 li:nth-child(even) {
+.notes2 li:nth-child(even) {
   -webkit-transform: rotate(.5deg);
   -moz-transform: rotate(.5deg);
   -o-transform: rotate(.5deg);
 }
 
-#notes2 li.kiln
+.notes2 li.kiln
 {
 
 }
 
-#notes2 li p {
+.notes2 li p {
   padding-right:5px;
   font: normal normal normal 20px/28px  Helvetica, Arial, sans-serif;
   color: #000;
@@ -377,7 +377,7 @@ h2{
   overflow:hidden;
 }
 
-#notes2 li::before {
+.notes2 li::before {
   content: ' ';
   display: block;
   position: absolute;
@@ -396,7 +396,7 @@ h2{
   -o-transform: rotate(-6deg);
 }
 
-#notes2 li:nth-child(even)::before {
+.notes2 li:nth-child(even)::before {
   -webkit-transform: rotate(6deg);
   -moz-transform: rotate(6deg);
   -o-transform: rotate(6deg);

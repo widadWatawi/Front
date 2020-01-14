@@ -6,41 +6,35 @@
   <h1>{{message}}</h1>
 </div>
 
-<div class="container">
+<div class="container" style="margin-right:-100px ">
   <div class="row">
-    <div class="col-md-6">
-      <form>
-        <fieldset>
-          <legend class="text-center">Valid information is required to register. <span class="req"><small>
-                                required *</small></span></legend>
 
-          <div class="form-group">
-            <label for="nom"><span class="req">* </span> Name: <small>This will be your login user
-              name</small> </label>
+    <div class="col-md-6" >
+
+      <form class="form-style-9" >
+        <h1> Ajouter Projet</h1>
+        <ul>
+          <li>
             <input required type="text" [(ngModel)]="projet.nom" name="name" id="nom"
-                   class="form-control phone" maxlength="28" placeholder="Enter your fullname..." />
-          </div>
+                   class="field-style field-full align-none" maxlength="28" placeholder="Enter your fullname..." />
 
-          <div class="form-group">
-            <label for="duree"><span class="req">* </span> Duree: </label>
-            <input class="form-control" type="text" [(ngModel)]="projet.duree" name="email" id="duree" required
-                   placeholder="Enter valid email address" />
-            <div id="errFirst"></div>
-          </div>
+          </li>
+          <li>
+            <input  class="field-style field-full align-none" type="text" [(ngModel)]="projet.duree" name="email" id="duree" required
+                    placeholder="Enter valid email address" />
+          </li>
 
-          <div class="form-group">
-            <label for="statut"><span class="req">* </span> Statut : </label>
-            <input class="form-control" type="text" [(ngModel)]="projet.statut" name="experience" id="statut"
+          <li>
+            <input class="field-style field-full align-none" type="text" [(ngModel)]="projet.statut" name="experience" id="statut"
                    placeholder="Total year of experience" required />
-            <div id="errLast"></div>
-          </div>
+          </li>
+          <li>
+            <input class="btn btn-success" type="submit" name="submit_reg" value="Register" (click)="save()">
 
-          <div class="form-group">
-            <input class="btn btn-success" type="submit" name="submit_reg" value="Register" (click)="edit()">
-          </div>
-        </fieldset>
-      </form><!-- ends register form -->
-      <!-- second for to fiter user-->
+          </li>
+        </ul>
+      </form>
+
     </div><!-- ends col-6 -->
 
   </div>

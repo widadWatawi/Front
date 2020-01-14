@@ -18,7 +18,7 @@ export class TacheFormComponent implements OnInit {
   constructor(private service:TacheService, private route:Router, private location: Location) { }
 
   ngOnInit() {
-    this.tache=this.service.tache;
+    //this.tache=this.service.tache;
   }
 
   public save(){
